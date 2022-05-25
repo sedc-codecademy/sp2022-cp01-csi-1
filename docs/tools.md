@@ -1,0 +1,2 @@
+ * Slack workspace: https://join.slack.com/t/newworkspace-ydm8136/shared_invite/zt-19mh3p5eb-nQmh~Nx1CKjCRtqI16UHKg
+ * Trello workspace: https://trello.com/invite/cp01csi1/c9c19cb2692b5b6d641f823a5c99ad1a
