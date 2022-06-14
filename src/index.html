@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <title>CryptoBase Wallet</title>
+</head>
+
+<body>
+  <!-- Main container -->
+  <div class="container">
+
+    <!-- Dashboard -->
+    <section id="s1" class="sections">
+      <!--Wallet -->
+      <div id="dashboard">
+        <br>
+        <p>Total balance
+        <p class="wallet-balance"></p>
+        </p>
+        <div class="coins-table-div">
+          <table class="table coins-table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--Wallet -->
+    </section>
+    <!-- Dashboard -->
+
+    <!-- Statistics  -->
+    <section id="s2" class="sections">
+
+      <div id="statistics">
+        <br>
+        <canvas id="btcCanvas">
+
+        </canvas>
+        <table id="statistics-table">
+          <tr>
+            <th class="coins-stats-th">Price</th>
+            <th class="coins-stats-th">24h Change</th>
+            <th class="coins-stats-th">24h High</th>
+            <th class="coins-stats-th">24h Low</th>
+          </tr>
+          <tr>
+            <td spacing="1">
+              <p id="current-price" class="coins-stats-td"></p>
+            </td>
+            <td>
+              <p id="price-change" class="coins-stats-td"></p>
+            </td>
+            <td>
+              <p id="price-high" class="coins-stats-td"></p>
+            </td>
+            <td>
+              <p id="price-low" class="coins-stats-td"></p>
+            </td>
+          </tr>
+        </table>
+        <select class="form-select" id="available-coins-select">
+
+        </select>
+      </div>
+    </section>
+    <!-- Statistics  -->
+
+    <!-- Buy/Sell crypto -->
+    <section id="s3" class="sections">
+      <!-- Buy crypto -->
+      <form id="buy-form">
+        <p id="coin-price"></p>
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" placeholder="Up to 99999EUR">
+        <br>
+        <label for="total">Total</label>
+        <input type="text" id="total" disabled>
+        <select class="form-select" id="buy-coins-select">
+
+        </select>
+        <input type="submit" value="BUY">
+      </form>
+      <!-- Buy crypto -->
+
+      <!-- Sell crypto -->
+      <!-- Missing/Under development -->
+      <!-- Sell crypto -->
+      
+    </section>
+    <!-- Buy/Sell crypto -->
+  </div>
+  <!-- Main container -->
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+<script src="/src/libs/jquery.js"></script>
+<script src="/src/scripts/helperFunctions.js"></script>
+<script src="/src/scripts/statistics.js"></script>
+<script src="/src/scripts/buyCrypto.js"></script>
+<script src="/src/scripts/wallet.js"></script>
+
+</html>
