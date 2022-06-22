@@ -1,40 +1,46 @@
 // Fill out statistics select with available coins in wallet
-const coinsForm = document.querySelector('#available-coins-select');
+const walletCoinsSelect = $('#available-coins-select');
 for (const key in localStorage) {
     // Skip built-in properties like length, setItem, etc.
     if (localStorage.hasOwnProperty(key)) {
-        const newOption = document.createElement('option');
-        newOption.textContent = key;
-        coinsForm.append(newOption);
+        const newOption = $('<option></option>');
+        newOption.html(capitalizeWord(key));
+        walletCoinsSelect.append(newOption);
     }
 }
 
-// Load Coin data and change on select option
-$(() => {
-    loadGraphData();
-    $('#available-coins-select').change(loadGraphData);
-});
-
 // Fetch data from coingecko api
-const loadGraphData = () => {
+const loadStatisticsData = () => {
+    // Ova treba da se sredi dinamicki za 1h, 24h, 1w, 1m i 1y
+    const currentTime = Math.floor(Date.now() / 1000);
+    const yesterdayTime = Math.floor(Date.now() / 1000) - 86400;
     const coinid = $('#available-coins-select option:selected').text().toLowerCase();
-    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&ids=${coinid}&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=24h`;
-    fetch(url, {
-        Accept: 'application/json',
-        method: 'GET',
-    })
+
+    if (coinid == '') {
+        return;
+    }
+
+    const url1 = `https://api.coingecko.com/api/v3/coins/${coinid}/market_chart/range?vs_currency=eur&from=${yesterdayTime}&to=${currentTime}`;
+    const url2 = `https://api.coingecko.com/api/v3/coins/${coinid}?market_data=true`;
+
+    fetch(url1)
         .then(data => data.json())
         .then(parsedData => {
-            createGraph(parsedData);
-            printCoinStatistics(parsedData[0]);
+            createGraph(parsedData, coinid);
+        })
+        .catch(err => console.error(err));
+
+    fetch(url2)
+        .then(data => data.json())
+        .then(parsedData => {
+            printCoinStatistics(parsedData);
         })
         .catch(err => console.error(err));
 }
 
 // Setting graph chart with Chart.js using data from coingecko api
-const createGraph = (data) => {
-    const btcCanvas = document.getElementById('btcCanvas').getContext('2d');
-
+const createGraph = (data, coinName) => {
+    const btcCanvas = $("#btcCanvas")[0].getContext('2d');
     // Chart needs to be destroyed to present a new one
     let chartStatus = Chart.getChart(btcCanvas);
     if (chartStatus != undefined) {
@@ -47,7 +53,7 @@ const createGraph = (data) => {
 
     // Get coin exchanges from last 7 days (100 entries)
     let btcPrices = [];
-    data[0].sparkline_in_7d.price.forEach(element => btcPrices.push(element));
+    data.prices.forEach(element => btcPrices.push(element));
     let dataLabels = [];
     for (let i = 0; i < btcPrices.length; i++) {
         dataLabels.push('');
@@ -57,10 +63,12 @@ const createGraph = (data) => {
     const btcData = {
         labels: dataLabels,
         datasets: [{
-            label: data[0].symbol.toUpperCase(),
+            label: capitalizeWord(coinName),
             borderWidth: 1.5,
-            backgroundColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(255, 99, 132, 0.2)',
             borderColor: 'rgb(255, 99, 132)',
+            tension: 0.4,
+            fill: true,
             data: btcPrices,
         }]
     };
@@ -77,7 +85,7 @@ const createGraph = (data) => {
             },
             elements: {
                 point: {
-                    radius: 1.5
+                    radius: 0
                 }
             },
             scales: {
@@ -103,18 +111,24 @@ const createGraph = (data) => {
 
 // Print coin statistics in table below the graph chart
 const printCoinStatistics = (data) => {
-    document.getElementById('current-price').innerHTML = `${formatCurrency(data.current_price)}`;
+    $('#current-price').html(`${formatCurrency(data.market_data.current_price.eur)}`);
 
-    let priceChange = data.price_change_percentage_24h
-    document.getElementById('price-change').innerHTML = `${priceChange}%`;
+    let priceChange = data.market_data.price_change_percentage_24h
+    $('#price-change').html(`${priceChange}%`);
 
     // Change price color depending on 24h change in percentage
     if (priceChange < 0) {
-        document.getElementById('price-change').style.color = 'red'
+        $('#price-change').css("color", "red");
     } else {
-        document.getElementById('price-change').style.color = 'green'
+        $('#price-change').css("color", "green");
     }
 
-    document.getElementById('price-high').innerHTML = `${formatCurrency(data.high_24h)}`;
-    document.getElementById('price-low').innerHTML = `${formatCurrency(data.low_24h)}`;
+    $('#price-high').html(`${formatCurrency(data.market_data.high_24h.eur)}`);
+    $('#price-low').html(`${formatCurrency(data.market_data.low_24h.eur)}`);
 }
+
+// Load Coin data and change on select option
+$(() => {
+    loadStatisticsData();
+    $('#available-coins-select').change(loadStatisticsData);
+});

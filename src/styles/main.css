@@ -1,26 +1,71 @@
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
 }
 
 /* Main container */
 .container {
-    padding: 50px 25px 25px 25px;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 0;
+    margin: 0 auto;
+    width: 900px;
+    height: 600px;
+    margin-top: 50px;
 }
+
 /* Main container */
+
+/* Wallet menu */
+.wallet-menu-div {
+    text-align: center;
+}
+
+.wallet-menu {
+    list-style: none;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.menu-items {
+    display: inline;
+}
+
+.menu-btns {
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    padding: 15px;
+    width: 200px;
+    color: white;
+    background-color: #00458B;
+    transition: all .2s;
+}
+
+.menu-btns:hover {
+    background-color: #0061c2;
+}
+
+/* Wallet menu */
 
 /* Sections inside main container */
 .sections {
-    border: 1px solid rgb(201, 201, 201);
-    padding: 20px;
+    padding: 0 20px;
     margin: 0 auto;
     border-radius: 10px;
     margin-top: 20px;
-    width: 700px;
 }
 
-#s3 input, select {
+#s3 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#s3 input,
+select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -30,38 +75,42 @@
     box-sizing: border-box;
 }
 
-#s3 input[type=submit] {
-    width: 25%;
-    background-color: blue;
+.buysell-btn {
+    width: 35%;
+    border-radius: 5px;
+    background-color: #00458B;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
+    transition: all .2s;
 }
+
+.buysell-btn:hover {
+    background-color: #0061c2;
+}
+
+.hide {
+    display: none !important;
+}
+
 /* Sections inside main container */
 
 /* Wallet */
 .wallet-balance {
+    padding-bottom: 15px;
     font-size: 24px;
+    border-bottom: 1px solid #dee2e6;
 }
 
 .coins-table-div {
-    overflow-y: auto; 
-    height: 500px;
-}
-
-.coins-table-div thead th { 
-    background-color: white;
-    position: sticky; 
-    top: 0; 
-    z-index: 1; 
+    overflow-y: auto;
+    height: 400px;
 }
 
 .coins-table {
     width: 100%;
-    border: rgb(92, 92, 92);
     text-align: center;
 }
 
@@ -69,8 +118,56 @@
 .coins-table>tbody>tr>th,
 .coins-table>thead>tr>td,
 .coins-table>thead>tr>th {
-    padding: 24px;
+    padding: 18px;
+    border: 0;
 }
+
+/* width */
+.coins-table-div::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.coins-table-div::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background: #f1f1f1;
+}
+
+/* Handle */
+.coins-table-div::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #888;
+}
+
+/* Handle on hover */
+.coins-table-div::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.wrap {
+    display: inline-block;
+}
+
+.wallet-coin-id {
+    font-size: 1rem;
+}
+
+.wallet-coin-symbol {
+    font-size: 0.8rem;
+    color: grey;
+    margin: 0px;
+}
+
+.wallet-coin-amount {
+    font-size: 1rem;
+}
+
+.wallet-coin-money {
+    font-size: 0.8rem;
+    color: grey;
+    margin: 0px;
+}
+
 /* Wallet */
 
 /* Select forms */
@@ -85,7 +182,20 @@
 .form-select:focus {
     box-shadow: none
 }
+
 /* Select forms */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
 
 th {
     color: rgb(92, 92, 92);
@@ -101,7 +211,18 @@ td {
     text-align: center;
 }
 
-#coin-price {
+.coin-price {
+    text-align: center;
     font-size: 18px;
     color: rgb(92, 92, 92);
+}
+
+.buysell-headers {
+    text-align: center;
+    font-size: 32px;
+}
+
+.sell-wrapper,
+.buy-wrapper {
+    width: 300px;
 }

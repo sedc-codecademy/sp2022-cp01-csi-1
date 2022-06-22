@@ -1,37 +1,45 @@
-// Create and append coin data for your wallet
-const addCryptoData = (data) => {
+// Get and print coin data for your wallet
+const walletCoinData = () => {
+    let accountBalance = 0;
+    const coins = getCoinsDb();
+
+    // Check if there are any elements inside the array, if not return
+    if(coins.length === 0){
+        return;
+    }
+
+    // Sort coins by estimated value
+    const sortedCoins = numberSort(coins);
+
+    // Print coin data inside wallet table
     let coinsTable = $('.coins-table');
-    data.forEach(item => {
+    sortedCoins.forEach(coin => {
         let row = "";
         row = `<tr>
-                    <td><img src=${item.image} style="width="30px"; height="30px"; "/> </td>
-                    <td>${item.id}</td>
-                    <td>${formatCurrency(item.price)}</td>
-                    <td>${item.amount.toFixed(5)}</td>
+                    <td><img src=${coin.image} style="width="30px"; height="30px";"/></td>
+                    <td>
+                        <div class="wrap">
+                            <span class="wallet-coin-id">${capitalizeWord(coin.id)}</span>
+                            <p class="wallet-coin-symbol"><span>${coin.symbol.toUpperCase()}</span></p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="wrap">
+                            <span class="wallet-coin-amount">${coin.coinsRecieved}</span>
+                            <p class="wallet-coin-money"><span>${formatCurrency(coin.estimatedValue)}</span></p>
+                        </div>
+                    </td>
                 </tr>`
         coinsTable.append(row);
-    })
-}
+    });
 
-// Calculate the total amount of cash you have in the wallet
-const walletBalance = () => {
-    let amount = 0;
-    for (let i = 0; i < localStorage.length; i++) {
-        amount += JSON.parse(localStorage.getItem(localStorage.key(i))).price;
+    // Calculate and print account balance
+    for (let i = 0; i < sortedCoins.length; i++) {
+        accountBalance += sortedCoins[i].currentPrice * sortedCoins[i].coinsRecieved;
+        console.log('calculating...')
     }
-
-    document.querySelector('.wallet-balance').textContent = formatCurrency(amount);
+    $('.wallet-balance').text(formatCurrency(accountBalance));
 }
 
-// Iterate through localStorage for the coin data
-const walletInfo = () => {
-    let items = [];
 
-    for (let i = 0; i < localStorage.length; i++) {
-        items.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
-    }
-    addCryptoData(items)
-}
-
-walletBalance();
-walletInfo();
+walletCoinData();
