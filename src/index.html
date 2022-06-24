@@ -19,8 +19,53 @@
     <section id="home-page" hidden>
         <div>Home</div>
     </section>
-    <section id="statistics-page" >
-        <div>statistics</div>
+    <section id="statistics-page">
+        <h2 id="heading">All Growing</h2>
+        <img id="img1" src="./assets/rising-arrow.jpg" />
+        <h2 id="heading2">All Falling</h2>
+        <img id="img2" src="./assets/falling-arrow.jpg" />
+        <table id="growingTable" cellpadding="1" cellspacing="1">
+            <tbody>
+                <tr>
+                    <th id="coinGrow">Coin</th>
+                    <th id="symbolGrow">Symbol</th>
+                    <th id="logoGrow">Logo</th>
+                    <th id="24hStatisticsGrow">24h</th>
+                    <th id="currentPriceGrow">Current Price</th>
+                    <th id="7dGrow">Last 7 Days</th>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="fallingTable">
+            <tbody>
+                <tr>
+                    <th id="coinFalling">Coin</th>
+                    <th id="symbolFalling">Symbol</th>
+                    <th id="logoFalling">Logo</th>
+                    <th id="24hStatisticsFalling">24h</th>
+                    <th id="currentPriceFalling">Current Price</th>
+                    <th id="7dFalling">Last 7 Days</th>
+                </tr>
+            </tbody>
+        </table>
+
+        <input id="search" type="text" placeholder="Search coin..." name="search">
+
+        <table id="resultTable" cellpadding="1" cellspacing="1">
+            <tbody div="scroll">
+                <tr>
+                    <th id="coin">Coin</th>
+                    <th id="symbol">Symbol</th>
+                    <th id="logo">Logo</th>
+                    <th id="currentPrice">Current Price</th>
+                    <th id="24hStatistics">24h</th>
+                    <th id="volume">24h Volume</th>
+                    <th id="cap">Market Cap</th>
+                    <th id="7d">Last 7 Days</th>
+                </tr>
+            </tbody>
+        </table>
     </section>
     <section id="simulator-page" hidden>
         <div>simulator</div>
@@ -30,7 +75,10 @@
     </section>
 </body>
 <script src="./libs/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="./scripts/main.js"></script>
-<script src="./scripts/home.js"></script>
+<script src="./scripts/statistics.js"></script>
+<script src="./scripts/growing.js"></script>
+<script src="./scripts/falling.js"></script>
 
 </html>
