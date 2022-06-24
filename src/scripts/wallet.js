@@ -1,10 +1,18 @@
+fetch('https://api.coingecko.com/api/v3/coins/bitcoin?market_data=true')
+    .then(data => data.json())
+    .then(parsedData => walletCoinData(parsedData))
+    .catch(err => console.err(err))
+
 // Get and print coin data for your wallet
-const walletCoinData = () => {
-    let accountBalance = 0;
+const walletCoinData = (btc) => {
+
+    const btcPrice = btc.market_data.current_price.eur;
+    let walletEstimatedValue = 0;
+    let walletBalance = 0;
     const coins = getCoinsDb();
 
     // Check if there are any elements inside the array, if not return
-    if(coins.length === 0){
+    if (coins.length === 0) {
         return;
     }
 
@@ -12,11 +20,11 @@ const walletCoinData = () => {
     const sortedCoins = numberSort(coins);
 
     // Print coin data inside wallet table
-    let coinsTable = $('.coins-table');
+    let coinsTable = $('.assets-table');
     sortedCoins.forEach(coin => {
         let row = "";
         row = `<tr>
-                    <td><img src=${coin.image} style="width="30px"; height="30px";"/></td>
+                    <td><img src=${coin.image} style="width="40px"; height="40px";"/></td>
                     <td>
                         <div class="wrap">
                             <span class="wallet-coin-id">${capitalizeWord(coin.id)}</span>
@@ -33,13 +41,11 @@ const walletCoinData = () => {
         coinsTable.append(row);
     });
 
-    // Calculate and print account balance
+    // Calculate and print wallet estimated value
     for (let i = 0; i < sortedCoins.length; i++) {
-        accountBalance += sortedCoins[i].currentPrice * sortedCoins[i].coinsRecieved;
-        console.log('calculating...')
+        walletEstimatedValue += sortedCoins[i].currentPrice * sortedCoins[i].coinsRecieved;
     }
-    $('.wallet-balance').text(formatCurrency(accountBalance));
+    walletBalance = walletEstimatedValue / btcPrice;
+    // Calcualte and print wallet account balance
+    $('.wallet-balance').html(`<p style="font-size: 1.3rem;">${walletBalance.toFixed(5)} <span class="text-secondary" style="font-size: 1rem">BTC</span> ≈ ${formatCurrency(walletEstimatedValue)}</p>`);
 }
-
-
-walletCoinData();

@@ -1,228 +1,63 @@
 * {
-    margin: 0;
+    font-family: 'Lato', sans-serif;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-}
-
-/* Main container */
-.container {
-    border: 1px solid #dee2e6;
-    border-radius: 10px;
-    padding: 0;
-    margin: 0 auto;
-    width: 900px;
-    height: 600px;
-    margin-top: 50px;
-}
-
-/* Main container */
-
-/* Wallet menu */
-.wallet-menu-div {
-    text-align: center;
-}
-
-.wallet-menu {
-    list-style: none;
-    align-items: center;
-    padding: 20px;
     margin: 0;
 }
 
-.menu-items {
-    display: inline;
+@media (max-width: 978px) {
+    .sections {
+        box-shadow: none !important; 
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    body {
+        padding: 0;
+    }
 }
 
-.menu-btns {
-    font-size: 1.2em;
-    border-radius: 5px;
-    border: none;
-    padding: 15px;
-    width: 200px;
-    color: white;
-    background-color: #00458B;
-    transition: all .2s;
-}
-
-.menu-btns:hover {
-    background-color: #0061c2;
-}
-
-/* Wallet menu */
-
-/* Sections inside main container */
-.sections {
-    padding: 0 20px;
+.assets-table-wrapper {
     margin: 0 auto;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-#s3 {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#s3 input,
-select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.buysell-btn {
-    width: 35%;
-    border-radius: 5px;
-    background-color: #00458B;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    transition: all .2s;
-}
-
-.buysell-btn:hover {
-    background-color: #0061c2;
-}
-
-.hide {
-    display: none !important;
-}
-
-/* Sections inside main container */
-
-/* Wallet */
-.wallet-balance {
-    padding-bottom: 15px;
-    font-size: 24px;
-    border-bottom: 1px solid #dee2e6;
-}
-
-.coins-table-div {
     overflow-y: auto;
-    height: 400px;
+    height: 450px;
 }
 
-.coins-table {
-    width: 100%;
-    text-align: center;
-}
-
-.coins-table>tbody>tr>td,
-.coins-table>tbody>tr>th,
-.coins-table>thead>tr>td,
-.coins-table>thead>tr>th {
-    padding: 18px;
+.assets-table>tbody>tr>td,
+.assets-table>tbody>tr>th,
+.assets-table>thead>tr>td,
+.assets-table>thead>tr>th {
     border: 0;
 }
 
 /* width */
-.coins-table-div::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 10px;
 }
 
 /* Track */
-.coins-table-div::-webkit-scrollbar-track {
-    border-radius: 8px;
+::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
 
 /* Handle */
-.coins-table-div::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background: #888;
+::-webkit-scrollbar-thumb {
+    background: #0e6efdb7;
 }
 
 /* Handle on hover */
-.coins-table-div::-webkit-scrollbar-thumb:hover {
-    background: #555;
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(14,110,253);
 }
 
-.wrap {
-    display: inline-block;
+.hide {
+    display: none;
 }
 
-.wallet-coin-id {
-    font-size: 1rem;
+.time-links {
+    color: #6C757D;
 }
 
-.wallet-coin-symbol {
-    font-size: 0.8rem;
-    color: grey;
-    margin: 0px;
-}
-
-.wallet-coin-amount {
-    font-size: 1rem;
-}
-
-.wallet-coin-money {
-    font-size: 0.8rem;
-    color: grey;
-    margin: 0px;
-}
-
-/* Wallet */
-
-/* Select forms */
-.form-select {
+.time-links:hover {
+    color: rgb(14,110,253);
     cursor: pointer;
-    font-size: 20px;
-    min-width: 250px;
-    outline: 0;
-    z-index: 1;
-}
-
-.form-select:focus {
-    box-shadow: none
-}
-
-/* Select forms */
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
-th {
-    color: rgb(92, 92, 92);
-}
-
-td {
-    font-size: .9em;
-}
-
-#statistics-table {
-    width: 100%;
-    table-layout: fixed;
-    text-align: center;
-}
-
-.coin-price {
-    text-align: center;
-    font-size: 18px;
-    color: rgb(92, 92, 92);
-}
-
-.buysell-headers {
-    text-align: center;
-    font-size: 32px;
-}
-
-.sell-wrapper,
-.buy-wrapper {
-    width: 300px;
 }

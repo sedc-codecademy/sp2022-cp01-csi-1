@@ -1,3 +1,14 @@
+// Get all coins in wallet(localStorage)
+const getCoinsDb = () => {
+    const coins = [];
+
+    for (let i = 0; i < localStorage.length; i++) {
+        coins.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
+    }
+
+    return coins;
+}
+
 // Format given number in currency format
 const formatCurrency = (cur) => {
     return cur.toLocaleString('en-US', {
@@ -37,4 +48,13 @@ const numberSort = (arr) => {
     } else {
         return [pivot, ...numberSort(rightArr)];
     }
+}
+ 
+const time = {
+    fifteenMinutes: Math.floor(Date.now() / 1000) - 900,
+    oneHour: Math.floor(Date.now() / 1000) - 3600,
+    oneDay: Math.floor(Date.now() / 1000) - 86400,
+    oneWeek: Math.floor(Date.now() / 1000) - 604800,
+    oneMonth: Math.floor(Date.now() / 1000) - 2592000,
+    oneYear: Math.floor(Date.now() / 1000) - 31104000
 }
