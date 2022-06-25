@@ -15,46 +15,7 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-primary navbar-dark py-3">
-    <div class="container">
-      <a href="" class="navbar-brand">Crypto Base</a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="#" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Market</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Wallet</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Login</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Header -->
-  <section class="text-dark py-4 text-center">
-    <div class="container">
-      <div class="d-sm-flex">
-        <div>
-          <h1>Wallet Overview</h1>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sections -->
+  <!-- #region Wallet -->
   <div class="container-md mb-3">
     <div class="row">
       <div class="col-lg-4 border rounded-3 shadow m-2 sections">
@@ -80,45 +41,53 @@
         </div>
       </div>
       <div class="col-lg border rounded-3 shadow m-2 sections">
-        <div class="row text-center mb-3 p-2 border-bottom">
+        <div class="row text-center mb-3 p-2 border-bottom time-nav">
           <div class="col-2">
-            <p class="m-0 fifteenMinutes time-links">15m</p>
+            <a class="nav-link fifteenMinutes time-links">15m</a>
           </div>
           <div class="col-2">
-            <p class="m-0 oneHour time-links">1h</p>
+            <a class="nav-link oneHour time-links">1h</a>
           </div>
           <div class="col-2">
-            <p class="m-0 oneDay time-links">24h</p>
+            <a class="nav-link oneDay time-links active">24h</a>
           </div>
           <div class="col-2">
-            <p class="m-0 oneWeek time-links">1w</p>
+            <a class="nav-link oneWeek time-links">1w</a>
           </div>
           <div class="col-2">
-            <p class="m-0 oneMonth time-links">1m</p>
+            <a x class="nav-link oneMonth time-links">1m</a>
           </div>
           <div class="col-2">
-            <p class="m-0 oneYear time-links">1y</p>
+            <a class="nav-link oneYear time-links">1y</a>
           </div>
         </div>
         <canvas id="chart" class="mb-2">
 
         </canvas>
         <div class="row text-center">
-          <div class="col-6">
+          <div class="col-4">
+            <p class="text-secondary m-0">Rank</p>
+            <p class="coin-rank">0</p>
+          </div>
+          <div class="col-4">
             <p class="text-secondary m-0">Price</p>
             <p class="current-price">0$</p>
           </div>
-          <div class="col-6">
+          <div class="col-4">
             <p class="text-secondary m-0">24 Change</p>
             <p class="price-change">0%</p>
           </div>
-          <div class="col-6">
+          <div class="col-4">
+            <p class="text-secondary m-0">24h Low</p>
+            <p class="24-low">0$</p>
+          </div>
+          <div class="col-4">
             <p class="text-secondary m-0">24h High</p>
             <p class="24-high">0$</p>
           </div>
-          <div class="col-6">
-            <p class="text-secondary m-0">24h Low</p>
-            <p class="24-low">0$</p>
+          <div class="col-4">
+            <p class="text-secondary m-0">Market cap</p>
+            <p class="market-cap">0</p>
           </div>
         </div>
         <div class="row p-3">
@@ -180,18 +149,13 @@
       </div>
     </div>
   </div>
-
+  <!-- #endregion -->
+  <script src="/src/libs/jquery.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
-  <script src="/src/libs/jquery.js"></script>
-  <script src="/src/scripts/helperFunctions.js"></script>
   <script src="/src/scripts/main.js"></script>
-  <script src="/src/scripts/statistics.js"></script>
-  <script src="/src/scripts/buyCrypto.js"></script>
-  <script src="/src/scripts/sellCrypto.js"></script>
   <script src="/src/scripts/wallet.js"></script>
 </body>
 

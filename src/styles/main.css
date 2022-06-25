@@ -4,6 +4,7 @@
     margin: 0;
 }
 
+/* #region Wallet */
 @media (max-width: 978px) {
     .sections {
         box-shadow: none !important; 
@@ -57,7 +58,12 @@
     color: #6C757D;
 }
 
+.active {
+    color: rgb(14,110,253);
+}
+
 .time-links:hover {
     color: rgb(14,110,253);
     cursor: pointer;
 }
+/* #endregion */

@@ -1,19 +1,8 @@
-// Get all coins in wallet(localStorage)
-const getCoinsDb = () => {
-    const coins = [];
-
-    for (let i = 0; i < localStorage.length; i++) {
-        coins.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
-    }
-
-    return coins;
-}
-
 // Format given number in currency format
 const formatCurrency = (cur) => {
     return cur.toLocaleString('en-US', {
         style: 'currency',
-        currency: 'EUR',
+        currency: 'USD',
     });
 }
 
@@ -49,8 +38,10 @@ const numberSort = (arr) => {
         return [pivot, ...numberSort(rightArr)];
     }
 }
- 
+
+// Used for getting historical data for given coin
 const time = {
+    currentTime: Math.floor(Date.now() / 1000),
     fifteenMinutes: Math.floor(Date.now() / 1000) - 900,
     oneHour: Math.floor(Date.now() / 1000) - 3600,
     oneDay: Math.floor(Date.now() / 1000) - 86400,
