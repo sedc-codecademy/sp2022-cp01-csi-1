@@ -77,7 +77,7 @@ populateStatisticsSelect();
 
 // Fetch data from coingecko api
 const loadStatisticsData = () => {
-    let coinid = $('.statistics-select option:selected').text().toLowerCase();
+    const coinid = $('.statistics-select option:selected').text().toLowerCase();
 
     if (coinid == '') {
         return;
