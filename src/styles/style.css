@@ -1,11 +1,19 @@
-/*#region statistics css*/
+body {
+    font-family: 'Sora', sans-serif;
+}
+
+body {
+    background: rgb(26,26,26);
+    background: linear-gradient(90deg, rgba(26,26,26,1) 0%, rgba(32,32,32,1) 32%, rgba(43,43,43,1) 100%);
+}
+
 #resultTable {
     margin-top: 50px;
     margin-bottom: 40px;
     margin-left: 10px;
     border-radius: 15px 50px 30px 5px;
     border: 2px solid;
-    border-color: black;
+    border-color: white;
     border-spacing: 1px;
     text-align: center;
     padding: 5px;
@@ -50,7 +58,7 @@
 }
 
 #resultTable td {
-    color: black;
+    color: white;
     text-align: center;
     font-size:14px;
     font-family: Arial, Helvetica, sans-serif;
@@ -63,7 +71,7 @@
     margin-left: 10px;
     border-radius: 15px 10px 12px 5px;
     border: 2px solid;
-    border-color: black;
+    border-color: white;
     border-spacing: 1px;
     text-align: center;
     padding: 2px;
@@ -89,7 +97,7 @@
 }
 
 #growingTable td {
-    color: black;
+    color: white;
     text-align: center;
     font-size:17px;
     font-family: Arial, Helvetica, sans-serif;
@@ -98,7 +106,7 @@
 }
 
 #heading {
-    color: black;
+    color: white;
     margin-left: 200px;
     margin-right: 980px;
     margin-bottom: -20px;
@@ -113,7 +121,7 @@
     margin-left: 700px;
     border-radius: 15px 10px 12px 5px;
     border: 2px solid;
-    border-color: black;
+    border-color: white;
     border-spacing: 1px;
     text-align: center;
     padding: 2px;
@@ -139,7 +147,7 @@
 }
 
 #fallingTable td {
-    color: black;
+    color: white;
     text-align: center;
     font-size:18px;
     font-family: Arial, Helvetica, sans-serif;
@@ -148,7 +156,7 @@
 }
 
 #heading2 {
-    color: black;
+    color: white;
     margin-left: 800px;
     margin-right: 100px;
     margin-top: -44px;
@@ -171,4 +179,4 @@
     height: 30px;
     margin-left: 1100px;
 }
-/*#endregion*/
+
