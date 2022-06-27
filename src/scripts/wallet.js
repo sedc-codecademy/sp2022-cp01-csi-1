@@ -111,7 +111,7 @@ const createGraph = (data, coinName) => {
     }
 
     // Global options for Chart.js
-    Chart.defaults.font.family = 'Lato';
+    Chart.defaults.font.family = 'Nunito';
     Chart.defaults.borderColor = 'rgba(70, 70, 70, 0.5)';
 
     // Get coin exchanges from last 7 days (100 entries)

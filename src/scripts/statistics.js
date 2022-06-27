@@ -35,13 +35,24 @@ function statistics(data) {
         </tr>`
     coinsTable.append(row);
     const ctx = document.getElementById(x.name + "chart").getContext('2d');
-    const myChart = new Chart(ctx, {
+
+    const graphData = {
+      labels: [...Array(x.sparkline_in_7d.price.length).keys()],
+      datasets: [{
+        label: '',
+        data: x.sparkline_in_7d.price
+      }]
+    };
+
+    const graphConfig = {
       type: 'line',
-      data: { datasets: [{ data: x.sparkline_in_7d.price }], labels: [...Array(x.sparkline_in_7d.price.length).keys()] },
+      data: graphData,
       options: {
-        responsive: false,
-        legend: {
-          display: false
+        plugins: {
+          legend: {
+            display: false
+          },
+          responsive: false,
         },
         elements: {
           line: {
@@ -56,19 +67,30 @@ function statistics(data) {
           enabled: false
         },
         scales: {
-          yAxes: [
-            {
+          x: {
+            ticks: {
+              display: false
+            },
+            grid: {
               display: false
             }
-          ],
-          xAxes: [
-            {
+          },
+          y: {
+            ticks: {
+              display: false
+            },
+            grid: {
               display: false
             }
-          ]
+          }
         }
       }
-    });
+    }
+
+    new Chart(
+      ctx,
+      graphConfig
+    );
   }
 }
 //#endregion
@@ -89,13 +111,24 @@ function growingCoins(data) {
                 </tr>`
       coinsTable.append(row);
       const ctx = document.getElementById(x.name + "chart").getContext('2d');
-      const myChart = new Chart(ctx, {
+
+      const graphData = {
+        labels: [...Array(x.sparkline_in_7d.price.length).keys()],
+        datasets: [{
+          label: '',
+          data: x.sparkline_in_7d.price
+        }]
+      };
+
+      const graphConfig = {
         type: 'line',
-        data: { datasets: [{ data: x.sparkline_in_7d.price }], labels: [...Array(x.sparkline_in_7d.price.length).keys()] },
+        data: graphData,
         options: {
-          responsive: false,
-          legend: {
-            display: false
+          plugins: {
+            legend: {
+              display: false
+            },
+            responsive: false,
           },
           elements: {
             line: {
@@ -110,19 +143,30 @@ function growingCoins(data) {
             enabled: false
           },
           scales: {
-            yAxes: [
-              {
+            x: {
+              ticks: {
+                display: false
+              },
+              grid: {
                 display: false
               }
-            ],
-            xAxes: [
-              {
+            },
+            y: {
+              ticks: {
+                display: false
+              },
+              grid: {
                 display: false
               }
-            ]
+            }
           }
         }
-      });
+      }
+
+      new Chart(
+        ctx,
+        graphConfig
+      )
     }
   }
 }
@@ -144,13 +188,24 @@ function fallingCoins(data) {
                 </tr>`
       coinsTable.append(row);
       const ctx = document.getElementById(x.name + "chart").getContext('2d');
-      const myChart = new Chart(ctx, {
+
+      const graphData = {
+        labels: [...Array(x.sparkline_in_7d.price.length).keys()],
+        datasets: [{
+          label: '',
+          data: x.sparkline_in_7d.price
+        }]
+      };
+
+      const graphConfig = {
         type: 'line',
-        data: { datasets: [{ data: x.sparkline_in_7d.price }], labels: [...Array(x.sparkline_in_7d.price.length).keys()] },
+        data: graphData,
         options: {
-          responsive: false,
-          legend: {
-            display: false
+          plugins: {
+            legend: {
+              display: false
+            },
+            responsive: false,
           },
           elements: {
             line: {
@@ -165,19 +220,30 @@ function fallingCoins(data) {
             enabled: false
           },
           scales: {
-            yAxes: [
-              {
+            x: {
+              ticks: {
+                display: false
+              },
+              grid: {
                 display: false
               }
-            ],
-            xAxes: [
-              {
+            },
+            y: {
+              ticks: {
+                display: false
+              },
+              grid: {
                 display: false
               }
-            ]
+            }
           }
         }
-      });
+      }
+
+      new Chart(
+        ctx,
+        graphConfig
+      )
     }
   }
 }
