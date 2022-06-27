@@ -7,15 +7,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/src/styles/style.css">
-  <title>Crypto Wallet</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Home</title>
 </head>
 
 <body>
-  <section id="simulator-page">
+  <nav id="navigation"></nav>
+  <section id="home-page" hidden>
+    <div>Home</div>
+  </section>
+  <section id="statistics-page">
+    <!--#region Statistics-->
+    <h2 id="heading">All Growing</h2>
+    <img id="img1" src="./assets/rising-arrow.jpg" />
+    <h2 id="heading2">All Falling</h2>
+    <img id="img2" src="./assets/falling-arrow.jpg" />
+    <table id="growingTable" cellpadding="1" cellspacing="1">
+      <tbody>
+        <tr>
+          <th id="coinGrow">Coin</th>
+          <th id="symbolGrow">Symbol</th>
+          <th id="logoGrow">Logo</th>
+          <th id="24hStatisticsGrow">24h</th>
+          <th id="currentPriceGrow">Current Price</th>
+          <th id="7dGrow">Last 7 Days</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <table id="fallingTable">
+      <tbody>
+        <tr>
+          <th id="coinFalling">Coin</th>
+          <th id="symbolFalling">Symbol</th>
+          <th id="logoFalling">Logo</th>
+          <th id="24hStatisticsFalling">24h</th>
+          <th id="currentPriceFalling">Current Price</th>
+          <th id="7dFalling">Last 7 Days</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <input id="search" type="text" placeholder="Search coin..." name="search">
+
+    <table id="resultTable" cellpadding="1" cellspacing="1">
+      <tbody div="scroll">
+        <tr>
+          <th id="coin">Coin</th>
+          <th id="symbol">Symbol</th>
+          <th id="logo">Logo</th>
+          <th id="currentPrice">Current Price</th>
+          <th id="24hStatistics">24h</th>
+          <th id="volume">24h Volume</th>
+          <th id="cap">Market Cap</th>
+          <th id="7d">Last 7 Days</th>
+        </tr>
+      </tbody>
+    </table>
+    <!--#endregion-->
+  </section>
+  <section id="simulator-page" hidden>
     <!-- #region Wallet -->
     <div class="container-md mb-3">
       <div>
@@ -159,13 +213,16 @@
     </div>
     <!-- #endregion -->
   </section>
-  <script src="/src/libs/jquery.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
-  <script src="/src/scripts/main.js"></script>
-  <script src="/src/scripts/wallet.js"></script>
+  <section id="login-page" hidden>
+    <div>login</div>
+  </section>
 </body>
+<script src="./libs/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+<script src="./scripts/main.js"></script>
+<script src="./scripts/statistics.js"></script>
+<script src="./scripts/wallet.js"></script>
 
 </html>
