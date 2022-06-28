@@ -227,3 +227,63 @@
 }
 
 /*#endregion*/
+
+/*#region Home page css*/
+#home-page{
+    width: 100%;
+    height: 100vh;
+    background-color: grey;
+    background-position: center;
+    background-size: cover;
+    padding: 30px;
+    color: #fff;
+    position: relative;
+}
+.content h1{
+    font-size: 88px;
+    margin-bottom: 12px;
+
+}
+.content h1 span{
+    color: #ff960b;
+}
+.content p{
+    line-height: 22px;
+    font-size: 18px;
+
+}
+.content .btn{
+    display: inline-block;
+    margin-top: 30px;
+    background: #ff960b;
+    text-decoration: none;
+    padding: 15px  30px;
+    border-radius: 30px;
+    color: white;
+}
+
+.cards{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 200px;
+    bottom: 10%;
+}
+.singleCard{
+    border: 2px solid rgb(84, 11, 84);
+    padding: 20px;
+    display: flex;
+    width: 210px;
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+    left: 0%;
+}
+#coinName{
+    color: #ff960b;
+}
+/*#endregion*/
