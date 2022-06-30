@@ -239,20 +239,20 @@
     color: #fff;
     position: relative;
 }
-.content h1{
+.content-homePage h1{
     font-size: 88px;
     margin-bottom: 12px;
 
 }
-.content h1 span{
+.content-homePage h1 span{
     color: #ff960b;
 }
-.content p{
+.content-homePage p{
     line-height: 22px;
     font-size: 18px;
 
 }
-.content .btn{
+.content-homePage .btn{
     display: inline-block;
     margin-top: 30px;
     background: #ff960b;
@@ -273,7 +273,7 @@
     border: 2px solid rgb(84, 11, 84);
     padding: 20px;
     display: flex;
-    width: 210px;
+    width: 220px;
     display: inline-block;
     margin-top: 50px;
     margin-left: 10px;
@@ -286,4 +286,206 @@
 #coinName{
     color: #ff960b;
 }
+
+/*#endregion*/
+
+/*#region Information  page css*/
+.information-layout{
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+    width: 83%;
+    height: 90vh;
+    left: 15%;
+    background-color: white;
+    background-position: center;
+    overflow: hidden;
+    margin-top: 0px;
+
+}
+
+.nav-bar{
+    top: 18%;
+    width: 330px;
+    height: 100vh;
+    
+position: absolute;
+}
+
+.information-text{
+    width: 44%;
+    height: 100vh;
+    right: 26%;
+    position: absolute;
+    margin: 10px;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll;
+    bottom: 3%;
+    top: 5%;
+
+
+}
+.information-text h1{
+    margin-top: 40px;
+}
+.information-text::-webkit-scrollbar{
+    display: none;
+}
+h3{
+    color: black;
+    text-align: center;
+    margin: 15px;
+    font-size: 25px;
+
+}
+.content{
+    margin-left: 5px;
+    border-left: 2px solid black;
+    color: black;
+    font-size: 20px;
+    justify-content: center;
+    padding: 20px;
+    line-height:40px;
+    display: inline-block;
+    
+
+}
+.content a{
+    text-decoration: none;
+    color: black;
+}
+.content a:hover{
+    color: black;
+    font-size: 21px;
+}
+.information-text h1{
+    color: black;
+    font-size: 30px;
+    /*text-align: center;*/
+    margin-bottom: 20px;
+}
+.information-text p{
+    color: black;
+    font-size: 24px;
+    line-height: 40px;
+
+    
+}
+.bi{
+    display: none;
+}
+@media (min-device-width: 375px) 
+  and (max-device-width: 812px) { 
+
+    .information-layout{
+        width: 100%;
+        left: 0%;
+        margin: 0;
+        padding: 0;
+    }
+    .information-text{
+        width: 80%;
+        right: 7%;
+        z-index:2 ;
+        top: 6.5%;
+    }
+    .information-text p{
+        font-size: 20px;
+        margin: 0;  
+        top: 2%; 
+    }
+    .content{
+        display: none;
+        width: 100%;
+        height: 430px;
+        background-color: rgb(169, 168, 168);
+        margin: 0px;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+    
+    }
+    .content a{
+        color: white;
+        font-size: 22px;
+    }
+    .nav-bar{
+        top: 0%;
+        right: 0%;
+        width: 100%;
+        height: 480px;
+        position: relative;
+    }
+    .nav-bar h3{
+        background-color: grey;  
+        margin: 0px;
+        top: 2;        
+        padding: 15px; 
+        color: white;
+        position: relative;
+    }
+    .bi{
+        display: block;
+        position: absolute;
+        right:5%;
+        z-index: 1;
+        top: 2%;
+        width: 23px;
+        height: 23px;
+        color: white;
+    
+    }
+}
+@media (min-device-width: 813px) 
+  and (max-device-width: 1180px) {
+    .information-layout{
+        width: 100%;
+        left: 0%;
+        margin: 0;
+        padding: 0;
+    }
+    .information-text{
+
+        width: 57%;
+        right: 5%;
+        top:1%;
+        margin: 0;
+        padding: 0;
+        z-index: 2;
+    }
+    .nav-bar{
+        left: 2%;
+        font-size: smaller;
+    }
+    .information-text p{
+        font-size: 20px;
+    }
+    .nav-bar a{
+        font-size: 17px;
+    }
+    .nav-bar a:hover{
+        font-size: 18px; 
+    }
+}
+
+@media (min-device-width: 1181px)
+        and (max-device-width: 1389px){
+        .information-layout{
+            width: 100%;
+            left: 0%;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+        }
+        .nav-bar{
+            left: 3%;
+        }
+        .information-text{
+            width: 50%;
+            right: 12%;
+        }
+        
+    }
 /*#endregion*/
