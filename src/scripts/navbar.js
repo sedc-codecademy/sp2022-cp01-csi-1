@@ -10,6 +10,7 @@ let sidebarById = document.getElementById("#sidebars");
 
 //Profile elements
 let profileElement = document.getElementById("profile");
+console.log(profileElement)
 let welcomeElement = document.getElementById("welcome");
 let nameElement = document.getElementById("nameOfUser");
 let logOutBtn = document.getElementById('log_out');
@@ -17,8 +18,7 @@ logOutBtn.style.visibility = 'hidden';
 
 //localStorage Data needed for creating profile
 let name = localStorage.getItem('name');
-console.log(name);
-let email = localStorage.getItem('email');
+let emailForLogIn = localStorage.getItem('email');
 
 
 
@@ -42,6 +42,7 @@ logInBtn.addEventListener("click",()=>{
 } )
 
 
+
 //Profile Code
 if(name != null && name != ''){
   welcomeElement.innerHTML = 'Welcome  : ';
@@ -59,6 +60,7 @@ logOutBtn.addEventListener('click', function(){
   localStorage.removeItem('email');
   logOutBtn.style.visibility = 'hidden';
 })
+
 
 
 
