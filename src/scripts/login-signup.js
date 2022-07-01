@@ -60,7 +60,7 @@ function SignIn(email,password){
 		console.log(current_user);
 		localStorage.setItem('name',current_user.name);
 		localStorage.setItem('email',current_user.emails);
-		window.location.href= "index2.html";
+		window.location.href= "index.html";
 	}
 	else{
 		alert('There is no such user');
