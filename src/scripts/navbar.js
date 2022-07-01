@@ -8,6 +8,19 @@ let statisticBtn = document.querySelector("bx-line-chart");
 let infoBtn = document.querySelector("bx-help-circle");
 let sidebarById = document.getElementById("#sidebars");
 
+//Profile elements
+let profileElement = document.getElementById("profile");
+console.log(profileElement)
+let welcomeElement = document.getElementById("welcome");
+let nameElement = document.getElementById("nameOfUser");
+let logOutBtn = document.getElementById('log_out');
+logOutBtn.style.visibility = 'hidden';
+
+//localStorage Data needed for creating profile
+let name = localStorage.getItem('name');
+let emailForLogIn = localStorage.getItem('email');
+
+
 
 
 
@@ -27,6 +40,29 @@ logInBtn.addEventListener("click",()=>{
 
 
 } )
+
+
+
+//Profile Code
+if(name != null && name != ''){
+  welcomeElement.innerHTML = 'Welcome  : ';
+  nameElement.innerHTML = name;
+  logOutBtn.style.visibility = 'visible';
+
+}
+
+
+//LogOut of progile code
+logOutBtn.addEventListener('click', function(){
+  welcomeElement.innerHTML = '';
+  nameElement.innerHTML = '';
+  localStorage.removeItem('name');
+  localStorage.removeItem('email');
+  logOutBtn.style.visibility = 'hidden';
+})
+
+
+
 
 
 // following are the code to change sidebar button(optional)

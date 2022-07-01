@@ -68,13 +68,11 @@
          <span class="tooltip">Log In / Sign up</span>
        </li>
    
-       <li class="profile">
-           <div class="profile-details">
+       <li class="profile" id="profile">
+           <div class="profile-details" id="profile-details">
              <!--<img src="#" alt="profileImg">-->
-             <div class="name_job">
-               <div class="name"></div>
-               <div class="job"></div>
-             </div>
+             <h4 id="welcome"></h4><br>
+               <div class="name" id="nameOfUser"></div>
            </div>
            <i class='bx bx-log-out' id="log_out" ></i>
        </li>
@@ -481,7 +479,76 @@
       </div>
   </section>
   <section id="login-page" >
-    <div>login</div>
+    <div class="cont">
+      <div class="form sign-in">
+        <h2>Sign In</h2>
+        <label>
+          <span>Email Address</span>
+          <input type="email" name="email" id="emailSignIn">
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" id="passwordSignIn">
+        </label>
+        <button class="submit" type="button" id="signInButton">Sign In</button>
+        <!-- <p class="forgot-pass">Forgot Password ?</p> -->
+  
+        <div class="social-media">
+          <ul>
+            <li><img src="images/facebook.png"></li>
+            <li><img src="images/twitter.png"></li>
+            <li><img src="images/linkedin.png"></li>
+            <li><img src="images/instagram.png"></li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="sub-cont">
+        <div class="img">
+          <div class="img-text m-up">
+            <h2>New here?</h2>
+            <p>Sign up and discover great amount of new opportunities!</p>
+          </div>
+          <div class="img-text m-in">
+            <h2>One of us?</h2>
+            <p>If you already has an account, just sign in. We've missed you!</p>
+          </div>
+          <div class="img-btn">
+            <span class="m-up">Sign Up</span>
+            <span class="m-in">Sign In</span>
+          </div>
+        </div>
+        <form id="form">
+        <div class="form sign-up" id="form_sign_up">
+          <h2>Sign Up</h2>
+          
+          <label class="form_control " id="name-label">
+            <span >Name</span>
+            <input type="text"  id="name" autocomplete="off">
+            <small class="small">Errors</small>
+          </label>
+          
+          <label class="form_control " id="email-label" >
+            <span >Email</span>
+            <input type="email" id="email" >
+            <small class="small">Error</small>
+          </label>
+          <label class="form_control " id="password-label" >
+            <span >Password</span>
+            <input type="password"  id="password" autocomplete="off">
+            <small class="small">Error</small>
+          </label>
+          <label class="form_control " id="checkPass-label">
+            <span >Confirm Password</span>
+            <input type="password" id="password-check" autocomplete="off">
+            <small class="small">Error</small>
+          </label>
+          <button type="button" class="submit" id="sub">Sign Up Now</button>
+        </div>
+        </form>
+      </div>
+    </div>
+    </section>
   </section>
 </body>
 <script src="./libs/jquery.js"></script>
@@ -496,4 +563,7 @@
 <script src="./scripts/statistics.js"></script>
 <script src="./scripts/wallet.js"></script>
 <script src="./scripts/navbar.js"></script>
+<script src ='./scripts/login-signup.js'></script>
+</html>
+
 </html>
