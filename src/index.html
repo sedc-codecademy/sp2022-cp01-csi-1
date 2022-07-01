@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/style.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
   </svg>
@@ -18,7 +19,68 @@
 </head>
 
 <body>
-  <nav id="navigation"></nav>
+  <nav id="navigation">
+    <div class="sidebar" id="sidebars">
+      <div class="logo-details">
+        <i class='bx bx-coin-stack'></i>
+          <div class="logo_name">Crypto Simulator</div>
+          <i class='bx bx-menu' id="btn" ></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+            <i class='bx bx-search' ></i>
+           <input type="text" placeholder="Search...">
+           <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="#" id="view_homepage">
+            <i class='bx bx-home-circle' ></i>
+            <span class="links_name">Home</span>
+          </a>
+           <span class="tooltip">Home</span>
+        </li>
+        <li>
+         <a href="#" id="view_statistic">
+          <i class='bx bx-line-chart'  ></i>
+           <span class="links_name">Statistic</span>
+         </a>
+         <span class="tooltip">Statistic</span>
+       </li>
+       <li>
+         <a href="#" id="view_simulator">
+          <i class='bx bx-pie-chart-alt-2' ></i>
+           <span class="links_name">Simulator</span>
+         </a>
+         <span class="tooltip">Simulator</span>
+       </li>
+       <li>
+         <a href="#" id="view_info">
+          <i class='bx bx-help-circle'></i>
+           <span class="links_name">Info</span>
+         </a>
+         <span class="tooltip">Info</span>
+       </li>
+       <li>
+         <a href="#" id="view_login">
+          <i class='bx bx-user-circle'></i>
+           <span class="links_name">Log In / Sign up</span>
+         </a>
+         <span class="tooltip">Log In / Sign up</span>
+       </li>
+   
+       <li class="profile">
+           <div class="profile-details">
+             <!--<img src="#" alt="profileImg">-->
+             <div class="name_job">
+               <div class="name"></div>
+               <div class="job"></div>
+             </div>
+           </div>
+           <i class='bx bx-log-out' id="log_out" ></i>
+       </li>
+      </ul>
+    </div>
+  </nav>
   <section id="home-page" >
       
       <div class="content-homePage">
@@ -30,7 +92,7 @@
               
      </div>
   </section>
-  <section id="statistics-page" hidden >
+  <section id="statistics-page"  >
     <!--#region Statistics-->
     <h2 id="heading">All Growing</h2>
     <img id="img1" src="./assets/rising-arrow.jpg" />
@@ -80,7 +142,7 @@
     </table>
     <!--#endregion-->
   </section>
-  <section id="simulator-page" hidden>
+  <section id="simulator-page" >
     <!-- #region Wallet -->
     <div class="container-md mb-3">
       <div>
@@ -225,7 +287,7 @@
     <!-- #endregion -->
   </section>
   <!-- #region Wallet -->
-  <section class="information-layout" hidden>
+  <section class="information-layout" id="info-page">
     <div class="nav-bar">
         <i class="bi bi-arrow-down"></i>
         <h3>Table of Content</h3>
@@ -418,7 +480,7 @@
         
       </div>
   </section>
-  <section id="login-page" hidden>
+  <section id="login-page" >
     <div>login</div>
   </section>
 </body>
@@ -433,5 +495,5 @@
 <script src="scripts/informationPage.js"></script>
 <script src="./scripts/statistics.js"></script>
 <script src="./scripts/wallet.js"></script>
-
+<script src="./scripts/navbar.js"></script>
 </html>
