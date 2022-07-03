@@ -15,7 +15,7 @@ var url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=
             
             for(let i = 0; i<6; i++){
                 card = card + "<div class='singleCard'>"
-                card = card + "<img src='"+data[i].image+"' id = 'coinImage' width='60' height='60' >"+
+                card = card + "<img src='"+data[i].image+"' id = 'coinImage' width='65' height='65' >"+
                 "<br><h3 id = 'coinName'>"+data[i].name+"</h3>"+
                 "<p id = 'coinPrice'> Price: "+data[i].current_price+" $</p>";
                 card = card+ "</div>";

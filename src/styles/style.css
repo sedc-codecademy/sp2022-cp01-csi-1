@@ -478,13 +478,14 @@
 #home-page{
     width: 100%;
     height: 100vh;
-    background-color: grey;
+    background-color: #590dab;
     background-position: center;
     background-size: cover;
-    padding: 30px;
+    padding: 10px 240px 30px 320px;
     color: #fff;
     position: relative;
 }
+
 .content-homePage h1{
     font-size: 88px;
     margin-bottom: 12px;
@@ -500,7 +501,7 @@
 }
 .content-homePage .btn{
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 20px;
     background: #ff960b;
     text-decoration: none;
     padding: 15px  30px;
@@ -512,27 +513,72 @@
     padding: 0;
     margin: 0;
     width: 100%;
-    height: 200px;
-    bottom: 10%;
-}
-.singleCard{
-    border: 2px solid rgb(84, 11, 84);
-    padding: 20px;
-    display: flex;
-    width: 220px;
-    display: inline-block;
-    margin-top: 50px;
-    margin-left: 10px;
-    margin-bottom: 0;
-    border-radius: 20px;
-    position: relative;
-    text-align: center;
-    left: 0%;
-}
-#coinName{
-    color: #ff960b;
+  height: 100vh;
+  
 }
 
+.singleCard{
+  display: inline-block;
+  margin-right: 120px;
+  margin-top: 20px;
+  padding-top: 15px;
+  width: 180px;
+  height: 170px;
+  border: 2px solid rgb(60, 10, 100);
+  border-radius: 20px;
+  text-align: center;
+}
+.singleCard #coinName{
+  color: orange;
+  font-size:20px;
+  padding-top: 0;
+}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  
+    .content-homePage h1{
+      font-size: 60px;
+    }
+    #home-page{
+      top: 0%;
+      margin: 0;
+      padding: 40px 40px 10px 120px;
+      -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    }
+    #home-page::-webkit-scrollbar{
+      display: none;
+  }
+
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .content-homePage h1{
+      font-size: 40px;
+    }
+    #home-page{
+      top: 0%;
+      margin: 0;
+      overflow: scroll;
+      padding: 40px 20px 10px 120px;
+      -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+     
+    }
+    #home-page::-webkit-scrollbar{
+      display: none;
+  }
+  .singleCard{
+    margin-left: 10px;
+  }
+
+}
 /*#endregion*/
 
 /*#region Information  page css*/
