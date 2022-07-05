@@ -337,7 +337,7 @@
     text-align: center;
     padding: 5px;
     font: 24px/36px sans-serif;
-    width: 1350px;
+    width: 1100px;
 }
 
 #resultTable tbody {
@@ -345,7 +345,7 @@
     display: block;
     border: none;
     padding: 5px;
-    width: 1300px;
+    width: 100%;
     overflow: scroll;
 }
 
@@ -378,7 +378,7 @@
     text-align: center;
     padding: 2px;
     font: 24px/36px sans-serif;
-    width: 50px;
+    width: 40px;
 }
 
 #growingTable tbody {
@@ -428,7 +428,7 @@
     text-align: center;
     padding: 2px;
     font: 24px/36px sans-serif;
-    width: 50px;
+    width: 40px;
 }
 
 #fallingTable tbody {
