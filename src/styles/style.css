@@ -599,10 +599,6 @@
     margin: 10px;
     width: 83%;
     height: 90vh;
-<<<<<<< Updated upstream
-=======
-    /* left: 15%; */
->>>>>>> Stashed changes
     background-color: white;
     background-position: center;
     overflow: hidden;
@@ -796,21 +792,12 @@ h3{
 
 
 /*LogIn and SignUp */
-<<<<<<< Updated upstream
  *:before, *:after{
   /* margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif; */
-=======
-#login-page{
-  width: 100%;
-  height: 100%;
-  margin-top: 5%;
-  margin-left: 10%;
->>>>>>> Stashed changes
 }
-
 body{
   width: 100%;
   height: 100vh;
@@ -925,19 +912,11 @@ button{
   text-transform: uppercase;
   font-weight: 600;
   font-family: 'Nunito', sans-serif;
-<<<<<<< Updated upstream
   background:lightslategray;
 }
 
 .submit:hover{
   background: -webkit-linear-gradient(left,white,lightslategray);
-=======
-  background: lightslategray;
-}
-
-.submit:hover{
-  background: -webkit-linear-gradient(left,white, lightslategray);
->>>>>>> Stashed changes
 }
 
 .forgot-pass{
