@@ -10,7 +10,6 @@ let sidebarById = document.getElementById("#sidebars");
 
 //Profile elements
 let profileElement = document.getElementById("profile");
-console.log(profileElement)
 let welcomeElement = document.getElementById("welcome");
 let nameElement = document.getElementById("nameOfUser");
 let logOutBtn = document.getElementById('log_out');

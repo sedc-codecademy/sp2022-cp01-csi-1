@@ -5,7 +5,6 @@ const getCoinsDb = () => {
     for (let i = 0; i < localStorage.length; i++) {
         coins.push(JSON.parse(localStorage.getItem(localStorage.key(i))))
     }
-
     return coins;
 }
 
@@ -13,8 +12,10 @@ const getCoinsDb = () => {
 // Get price for bitcoin
 fetch('https://api.coingecko.com/api/v3/coins/bitcoin?market_data=true')
     .then(data => data.json())
-    .then(parsedData => walletCoinData(parsedData))
-    .catch(err => console.err(err))
+    .then(parsedData => {
+        walletCoinData(parsedData)
+    })
+    .catch(err => console.error(err))
 
 // Get and print coin data for your wallet
 const walletCoinData = (btc) => {
@@ -40,13 +41,13 @@ const walletCoinData = (btc) => {
                     <td>
                         <div class="wrap">
                             <span class="wallet-coin-id">${capitalizeWord(coin.id)}</span>
-                            <p class="wallet-coin-symbol"><span>${coin.symbol.toUpperCase()}</span></p>
+                            <p class="wallet-coin-symbol text-secondary" style="font-size: 0.8rem;"><span>${coin.symbol.toUpperCase()}</span></p>
                         </div>
                     </td>
                     <td>
                         <div class="wrap">
-                            <span class="wallet-coin-amount">${coin.coinsRecieved}</span>
-                            <p class="wallet-coin-money"><span>${formatCurrency(coin.estimatedValue)}</span></p>
+                            <span class="wallet-coin-amount">${coin.coinsRecieved.toFixed(5)}</span>
+                            <p class="wallet-coin-money text-secondary" style="font-size: 0.8rem;"><span>${formatCurrency(coin.estimatedValue)}</span></p>
                         </div>
                     </td>
                 </tr>`
@@ -59,7 +60,7 @@ const walletCoinData = (btc) => {
     }
     walletBalance = walletEstimatedValue / btcPrice;
     // Calcualte and print wallet account balance
-    $('.wallet-balance').html(`<p style="font-size: 1.3rem;">${walletBalance.toFixed(5)} <span class="text-secondary" style="font-size: 1rem">BTC</span> ≈ ${formatCurrency(walletEstimatedValue)}</p>`);
+    $('.wallet-balance').html(`<p style="font-size: 1.6rem;">${walletBalance.toFixed(5)} <span class="text-secondary" style="font-size: 1rem; font-weight: 600">BTC</span> ≈ ${formatCurrency(walletEstimatedValue)}</p>`);
 }
 //#endregion
 
@@ -112,7 +113,6 @@ const createGraph = (data, coinName) => {
 
     // Global options for Chart.js
     Chart.defaults.font.family = 'Nunito';
-    Chart.defaults.borderColor = 'rgba(70, 70, 70, 0.5)';
 
     // Get coin exchanges from last 7 days (100 entries)
     let btcPrices = [];
@@ -143,6 +143,9 @@ const createGraph = (data, coinName) => {
                 tooltip: {
                     mode: 'index',
                     intersect: false
+                },
+                legend: {
+                    display: false
                 }
             },
             elements: {
@@ -224,17 +227,17 @@ $('.statistics-select').change(loadStatisticsData);
 //#region Buy section
 const populateBuyFormSelect = () => {
     fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur')
-    .then(data => data.json())
-    .then(parsedData => { 
-        const buySelect = $('.buy-select');
-        // Populate select with all the coins
-        parsedData.forEach(coin => {
-            const option = document.createElement('option');
-            option.innerHTML = coin.symbol.toUpperCase();
-            buySelect.append(option);
-        });
-    })
-    .catch(err => console.error(err))
+        .then(data => data.json())
+        .then(parsedData => {
+            const buySelect = $('.buy-select');
+            // Populate select with all the coins
+            parsedData.forEach(coin => {
+                const option = document.createElement('option');
+                option.innerHTML = coin.symbol.toUpperCase();
+                buySelect.append(option);
+            });
+        })
+        .catch(err => console.error(err))
 }
 populateBuyFormSelect();
 
@@ -268,14 +271,14 @@ const buyForm = (data) => {
     // Calculate and print data to the form
     coinPrice.text(`1 ${coinData.symbol.toUpperCase()} ≈ ${formatCurrency(coinData.current_price)}`);
     if (buyInput.val() != '') {
-        total = buyInput.val() / coinData.current_price;
+        total = parseFloat(buyInput.val()) / coinData.current_price;
         recieveInput.val(`${total.toFixed(5)}`);
     } else {
         buyButton.addClass('disabled');
     }
 
     buyInput.keyup(() => {
-        if (buyInput.val() > 50000 || buyInput.val() < 15) {
+        if (parseFloat(buyInput.val()) > 50000 || parseFloat(buyInput.val()) < 15) {
             buyFormValidation.text('Limit per transaction is between 15.00 - 50000.00 EUR.')
             buyButton.addClass('disabled');
         } else {
@@ -283,7 +286,7 @@ const buyForm = (data) => {
             buyButton.removeClass('disabled');
         }
 
-        if (buyInput.val() >= 1) {
+        if (parseFloat(buyInput.val()) >= 15) {
             total = buyInput.val() / coinData.current_price;
             recieveInput.val(`${total.toFixed(5)}`);
         } else {
@@ -302,7 +305,7 @@ $('.buy-select').change(buyFormData);
 
 // Add coin in wallet on button click
 $('#buy-btn').click(() => {
-    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur`;
+    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd`;
     fetch(url)
         .then(data => data.json())
         .then(parsedData => {
@@ -311,14 +314,13 @@ $('#buy-btn').click(() => {
             const recieveInput = $('#buy-form-recieve');
             const walletCoins = getCoinsDb();
             let coinData;
-
             // Get the selected coin
             parsedData.forEach(coin => {
                 if (coin.symbol === selectedCoin) {
                     coinData = coin;
                 }
             });
-
+            alert(coinData);
             let coinExists = false;
             walletCoins.forEach(coin => {
                 if (coin.symbol.toUpperCase() === coinData.symbol.toUpperCase()) {
@@ -328,8 +330,8 @@ $('#buy-btn').click(() => {
 
             if (coinExists) {
                 const coinToUpdate = JSON.parse(localStorage.getItem(coinData.id));
-                coinToUpdate.estimatedValue = parseInt(coinToUpdate.estimatedValue) + parseInt(buyInput.val());
-                coinToUpdate.coinsRecieved = parseFloat(coinToUpdate.coinsRecieved) + parseFloat(recieveInput.val());
+                coinToUpdate.estimatedValue = coinToUpdate.estimatedValue + parseFloat(buyInput.val());
+                coinToUpdate.coinsRecieved = coinToUpdate.coinsRecieved + parseFloat(recieveInput.val());
 
                 localStorage.setItem(coinData.id, JSON.stringify(coinToUpdate));
             } else {
@@ -337,8 +339,8 @@ $('#buy-btn').click(() => {
                     id: coinData.id,
                     symbol: coinData.symbol,
                     image: coinData.image,
-                    estimatedValue: parseFloat(buyInput.val()),
-                    coinsRecieved: recieveInput.val(),
+                    estimatedValue: Number(buyInput.val()),
+                    coinsRecieved: Number(recieveInput.val()),
                     currentPrice: coinData.current_price
                 }));
             }
@@ -388,8 +390,8 @@ const sellFormData = () => {
     sellButton.addClass('disabled');
 
     sellInput.keyup(() => {
-        if (sellInput.val() > coinData.coinsRecieved || sellInput.val() < 0) {
-            sellFormValidation.text('Insufficient amount in account')
+        if (parseFloat(sellInput.val()) > coinData.coinsRecieved || parseFloat(sellInput.val()) < 0) {
+            sellFormValidation.text('Insufficient amount in account');
             sellButton.addClass('disabled');
         } else if (sellInput.val() === '') {
             sellFormValidation.text('');
@@ -399,8 +401,12 @@ const sellFormData = () => {
             sellButton.removeClass('disabled');
         }
 
-        total = coinData.currentPrice * sellInput.val();
-        recieveInput.val(`${total.toFixed(5)}`);
+        if (!(sellInput.val() === '')) {
+            total = coinData.currentPrice * parseFloat(sellInput.val());
+            recieveInput.val(`${total.toFixed(5)}`);
+        } else {
+            recieveInput.val('');
+        }
     });
 }
 
@@ -411,11 +417,11 @@ $('#sell-btn').click(() => {
 
     getCoinsDb().forEach(coin => {
         if (coin.symbol.toUpperCase() === selectedCoin) {
-            if (coin.coinsRecieved === sellInput.val()) {
+            if (coin.coinsRecieved === parseFloat(sellInput.val())) {
                 localStorage.removeItem(coin.id);
             } else {
                 const coinToUpdate = JSON.parse(localStorage.getItem(coin.id));
-                coinToUpdate.coinsRecieved = (coinToUpdate.coinsRecieved - sellInput.val()).toFixed(5);
+                coinToUpdate.coinsRecieved = (coinToUpdate.coinsRecieved - parseFloat(sellInput.val())).toFixed(5);
                 coinToUpdate.estimatedValue = coinToUpdate.coinsRecieved * coinToUpdate.currentPrice;
                 localStorage.setItem(coin.id, JSON.stringify(coinToUpdate));
             }

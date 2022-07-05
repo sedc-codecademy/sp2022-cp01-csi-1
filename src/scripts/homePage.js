@@ -7,7 +7,6 @@ var url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=
         dataType:'text',
         success:function(data){
             data = JSON.parse(data);
-            console.log(data);
             let cards = $("#cards")
             
             let card = "";
@@ -27,7 +26,6 @@ var url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=
              
         },
         error:function(data){
-            console.log(data);
             $('#output').append("<br>"+data.statusText);
         }  
     })
