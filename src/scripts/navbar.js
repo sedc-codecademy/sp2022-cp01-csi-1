@@ -1,12 +1,19 @@
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
+<<<<<<< Updated upstream
 // let searchBtn = document.querySelector(".bx-search");
+=======
+>>>>>>> Stashed changes
 let logInBtn = document.querySelector(".bx-user-circle");
 let homeBtn =  document.querySelector(" bx-home-circle");
 let statisticBtn = document.querySelector("bx-line-chart");
 // let simulatorBtn = doument.querySelector("bx-pie-chart-alt-2");
 let infoBtn = document.querySelector("bx-help-circle");
+<<<<<<< Updated upstream
 let sidebarById = document.getElementById("sidebars");
+=======
+let sidebarById = document.getElementById("#sidebars");
+>>>>>>> Stashed changes
 let sideBarByClass = document.getElementsByClassName("sidebar");
 
 //Profile elements
@@ -33,8 +40,11 @@ closeBtn.addEventListener("click", ()=>{
   
 });
 
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 logInBtn.addEventListener("click",()=>{
   sidebar.classList.toggle("open");
   menuBtnChange();
