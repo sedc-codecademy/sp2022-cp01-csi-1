@@ -15,7 +15,8 @@ fetch('https://api.coingecko.com/api/v3/coins/bitcoin?market_data=true')
     .then(parsedData => {
         walletCoinData(parsedData)
     })
-    .catch(err => console.error(err))
+    .catch(err =>
+         console.log(err));
 
 // Get and print coin data for your wallet
 const walletCoinData = (btc) => {

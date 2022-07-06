@@ -17,12 +17,12 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #0e6efdb7;
+  background: orange;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(14, 110, 253);
+  background: orange;
 }
 
 /* #region Nav Bar*/
@@ -32,7 +32,7 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 78px;
+  width: 90px;
   background: #11101D;
   padding: 6px 14px;
   z-index: 99;
@@ -53,10 +53,12 @@
 .sidebar .logo-details .icon {
   opacity: 0;
   transition: all 0.5s ease;
+  color: orange;
+
 }
 
 .sidebar .logo-details .logo_name {
-  color: #fff;
+  color: orange;
   font-size: 20px;
   font-weight: 600;
   opacity: 0;
@@ -66,6 +68,7 @@
 .sidebar.open .logo-details .icon,
 .sidebar.open .logo-details .logo_name {
   opacity: 1;
+  color: orange;
 }
 
 .sidebar .logo-details #btn {
@@ -86,9 +89,9 @@
 }
 
 .sidebar i {
-  color: #fff;
+  color: orange;
   height: 60px;
-  min-width: 50px;
+  min-width: 30px;
   font-size: 28px;
   text-align: center;
   line-height: 60px;
@@ -110,7 +113,7 @@
   top: -20px;
   left: calc(100% + 15px);
   z-index: 3;
-  background: #fff;
+  background: orange;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   padding: 6px 12px;
   border-radius: 4px;
@@ -136,7 +139,7 @@
 
 .sidebar input {
   font-size: 15px;
-  color: #FFF;
+  color: orange;
   font-weight: 400;
   outline: none;
   height: 50px;
@@ -153,25 +156,25 @@
   width: 100%;
 }
 
-.sidebar .bx-search {
+/* .sidebar .bx-search {
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   font-size: 22px;
   background: #1d1b31;
-  color: #FFF;
+  color: orange;
 }
 
 .sidebar.open .bx-search:hover {
   background: #1d1b31;
-  color: #FFF;
-}
+  color: orange;
+} */
 
-.sidebar .bx-search:hover {
-  background: #FFF;
+/* .sidebar .bx-search:hover {
+  background: orange;
   color: #11101d;
-}
+} */
 
 .sidebar li a {
   display: flex;
@@ -185,11 +188,11 @@
 }
 
 .sidebar li a:hover {
-  background: #FFF;
+  background: orange;
 }
 
 .sidebar li a .links_name {
-  color: #fff;
+  color: orange;
   font-size: 15px;
   font-weight: 400;
   white-space: nowrap;
@@ -321,6 +324,19 @@
   }
 }
 
+.row {
+  background-image: url("/assets/bg1.jpg");
+  background-size: cover;
+  background-position: bottom;
+  color: white;
+}
+
+.container-md {
+  background-image: url("/assets/bg1.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
 .assets-table-wrapper {
   margin: 0 auto;
   overflow-y: auto;
@@ -332,6 +348,7 @@
 .assets-table>thead>tr>td,
 .assets-table>thead>tr>th {
   border: 0;
+  color: white;
 }
 
 .hide {
@@ -367,16 +384,38 @@
 /* #endregion */
 
 /*#region statistics css*/
-.growing-table-wrapper, 
-.falling-table-wrapper, 
+#statistics-page {
+  background-image: url("/assets/bg1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.growing-table-wrapper,
+.falling-table-wrapper,
 .result-table-wrapper {
   margin: 0 auto;
   overflow-y: auto;
   height: 450px;
 }
 
+#growingTable {
+  color: white;
+}
+
+#fallingTable {
+  color: white;
+}
+
+#resultTable {
+  color: white
+}
+
+#search {
+  color: white;
+}
+
 #heading {
-  color: black;
+  color: white;
   margin-left: 200px;
   margin-right: 980px;
   margin-bottom: -20px;
@@ -386,7 +425,7 @@
 }
 
 #heading2 {
-  color: black;
+  color: white;
   margin-right: 100px;
   margin-top: -44px;
   margin-bottom: -19px;
@@ -408,17 +447,18 @@
   height: 30px;
   margin-left: 1100px;
 }
+
 /*#endregion*/
 
 /*#region Home page css*/
 #home-page {
   width: 100%;
   height: 100vh;
-  background-color: #590dab;
+  background-image: url("/assets/bg1.jpg");
   background-position: center;
   background-size: cover;
   padding: 10px 240px 30px 320px;
-  color: #fff;
+  color: white;
   position: relative;
 }
 
@@ -532,14 +572,22 @@
   position: relative;
   padding: 10px;
   margin: 10px;
-  width: 83%;
-  height: 90vh;
-  left: 15%;
-  background-color: white;
-  background-position: center;
+  width: 94%;
+  height: 97vh;
+  left: 5%;
+  background-image: url("/assets/bg1.jpg");
+  background-size: initial;
+  background-position: right;
   overflow: hidden;
   margin-top: 0px;
+}
 
+#info-page h3 {
+  color: orange;
+}
+
+#info-page h1 {
+  color: orange;
 }
 
 .nav-bar {
@@ -574,15 +622,15 @@
 }
 
 h3 {
-  color: black;
+  color: white;
   margin: 15px;
   font-size: 25px;
 }
 
 .content {
   margin-left: 5px;
-  border-left: 2px solid black;
-  color: black;
+  border-left: 2px solid white;
+  color: white;
   font-size: 20px;
   justify-content: center;
   padding: 20px;
@@ -594,23 +642,23 @@ h3 {
 
 .content a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .content a:hover {
-  color: black;
+  color: orange;
   font-size: 21px;
 }
 
 .information-text h1 {
-  color: black;
+  color: white;
   font-size: 30px;
   /*text-align: center;*/
   margin-bottom: 20px;
 }
 
 .information-text p {
-  color: black;
+  color: white;
   font-size: 24px;
   line-height: 40px;
 
@@ -751,7 +799,14 @@ h3 {
 /* #region LogIn and SignUp */
 body {
   width: 100%;
-  height: 100vh;
+  height: 97vh;
+  background-image: url("/assets/bg1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#login-page h2 {
+  color: orange;
 }
 
 input,
@@ -766,7 +821,6 @@ button {
   position: absolute;
   width: 80%;
   height: 95%;
-  background: #fff;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 105px 12px rgba(0, 0, 0, 0.22);
 }
 
@@ -781,6 +835,9 @@ button {
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+  background-size: cover;
+  background-image: url("/assets/bg1.jpg");
+  color: white;
 }
 
 .form.sign-up {
@@ -790,6 +847,7 @@ button {
 h2 {
   width: 100%;
   font-size: 30px;
+  color: white;
 }
 
 label {
@@ -800,7 +858,7 @@ label {
 label span {
   font-size: 14px;
   font-weight: 600;
-  color: #505f75;
+  color: white;
   text-transform: uppercase;
 }
 
@@ -811,7 +869,7 @@ input {
   font-size: 16px;
   padding-bottom: 5px;
   border-bottom: 1px solid rgba(109, 93, 93, 0.4);
-
+  color: white;
   font-family: 'Nunito', sans-serif;
 }
 
@@ -861,11 +919,11 @@ button {
   text-transform: uppercase;
   font-weight: 600;
   font-family: 'Nunito', sans-serif;
-  background: -webkit-linear-gradient(left, #7579ff, #ef2424);
+  background: -webkit-linear-gradient(left, #7579ff, orange);
 }
 
 .submit:hover {
-  background: -webkit-linear-gradient(left, #ef2424, #7579ff);
+  background: -webkit-linear-gradient(left, orange, #7579ff);
 }
 
 .forgot-pass {
@@ -905,12 +963,11 @@ button {
 .sub-cont {
   overflow: hidden;
   position: absolute;
-  left: 68%;
+  left: 70%;
   top: 0;
   width: 100%;
   height: 100%;
-  padding-left: 35%;
-  background: #fff;
+  padding-left: 37%;
   -webkit-transition: -webkit-transform 1.2s ease-in-out;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out;
@@ -939,7 +996,7 @@ button {
   top: 0;
   width: 1000px;
   height: 100%;
-  background-image: url(images/bg1.jpg);
+  background-image: url("assets/bg1.jpg");
   background-size: cover;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
@@ -952,7 +1009,9 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background-size: cover;
+  background-image: url("/assets/bg1.jpg");
+  background-position: bottom;
 }
 
 .cont.s-signup .img:before {

@@ -30,11 +30,11 @@
         <i class='bx bx-menu' id="btn"></i>
       </div>
       <ul class="nav-list">
-        <li>
+        <!-- <li>
           <i class='bx bx-search'></i>
           <input type="text" placeholder="Search...">
-          <span class="tooltip">Search</span>
-        </li>
+          <span class="tooltip"></span>
+        </li> -->
         <li>
           <a href="#" id="view_homepage">
             <i class='bx bx-home-circle'></i>
@@ -89,7 +89,7 @@
     <div class="content-homePage">
       <h1>BUY & <br>SELL <span>Crypto</span></h1>
       <p>World's biggest Cryptocurrency exchange available on web<Br> as well as mobile phone.</p>
-      <a href="#" class="btn">EXPLORE MORE</a>
+      <a href="#" id="view_info" class="btn">LEARN MORE</a>
     </div>
     <div id="cards">
     </div>
@@ -136,7 +136,7 @@
 
       <div class="row m-3">
         <div class="col border rounded m-3 p-3 shadow">
-          <h3 class="mb-3">Stats</h3>
+          <h3 class="mb-3">Statistics</h3>
           <div class="container mb-3 p-3 w-75">
             <input id="search" type="text" placeholder="Search coin..." name="search">
           </div>
@@ -153,6 +153,16 @@
                   <th class="text-secondary" id="7d">Chart</th>
                 </tr>
               </tbody>
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item">
+                    <button id="prevButton">Previous</button>
+                  </li>
+                  <li class="pagination">
+                    <button id="nextButton">Next</button>
+                  </li>
+                </ul>
+              </nav>
             </table>
           </div>
         </div>
@@ -192,7 +202,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg bg-white shadow rounded border m-2 sections">
+        <div class="col-lg shadow rounded border m-2 sections">
           <div class="row text-center mb-3 p-2 border-bottom time-nav">
             <div class="col-2">
               <a class="nav-link fifteenMinutes time-links">15m</a>
@@ -258,7 +268,7 @@
         <h2>Exchange</h2>
       </div>
       <div class="row ">
-        <div class="col-lg bg-white rounded shadow border m-2 sections">
+        <div class="col-lg rounded shadow border m-2 sections">
           <form class="p-4">
             <div class="d-flex justify-content-between">
               <div>
@@ -286,7 +296,7 @@
             <input type="submit" class="btn btn-lg btn-primary px-5 w-50" id="buy-btn" value="Buy"></input>
           </form>
         </div>
-        <div class="col-lg bg-white rounded shadow border m-2 sections">
+        <div class="col-lg rounded shadow border m-2 sections">
           <form class="p-4">
             <h2>Sell</h2>
             <div class="form-group mb-3">
@@ -614,10 +624,10 @@
 
           <div class="social-media">
             <ul>
-              <li><img src="images/facebook.png"></li>
-              <li><img src="images/twitter.png"></li>
-              <li><img src="images/linkedin.png"></li>
-              <li><img src="images/instagram.png"></li>
+              <li><img src="assets/facebook.png"></li>
+              <li><img src="assets/twitter.png"></li>
+              <li><img src="assets/linkedin.png"></li>
+              <li><img src="assets/instagram.png"></li>
             </ul>
           </div>
         </div>
@@ -655,7 +665,7 @@
               <label class="form_control " id="password-label">
                 <span>Password</span>
                 <input type="password" id="password" autocomplete="off">
-                <small class="small">Error</small>
+                <small class="small">Error(Password has to have at least one Upper case)</small>
               </label>
               <label class="form_control " id="checkPass-label">
                 <span>Confirm Password</span>
@@ -679,8 +689,8 @@
   integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
 <script src="./scripts/main.js"></script>
-<script src="scripts/homePage.js"></script>
-<script src="scripts/informationPage.js"></script>
+<script src="./scripts/homePage.js"></script>
+<script src="./scripts/informationPage.js"></script>
 <script src="./scripts/statistics.js"></script>
 <script src="./scripts/wallet.js"></script>
 <script src="./scripts/navbar.js"></script>
