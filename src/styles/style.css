@@ -1,9 +1,16 @@
 * {
     font-family: 'Nunito', sans-serif;
-    padding: 0;
-    margin: 0;
+    /* padding: 0;
+    margin: 0; */
 }
-
+body{
+  background-image: url("https://holacrypto.com/wp-content/uploads/2020/01/altnews-twitter-back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: #11101D;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -16,12 +23,12 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #0e6efdb7;
+    background: rgb(6, 6, 32);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(14, 110, 253);
+    background: -webkit-linear-gradient(left,white,rgb(6,6,32));
 }
 
 /*region Nav Bar*/
@@ -32,11 +39,13 @@
   top: 0;
   height: 100%;
   width: 78px;
-  background: #11101D;
+  background: rgb(7, 7, 26);
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
 }
+
+
 .sidebar.open{
   width: 250px;
 }
@@ -57,6 +66,9 @@
   opacity: 0;
   transition: all 0.5s ease;
 }
+#welcome{
+  color: white;
+}
 .sidebar.open .logo-details .icon,
 .sidebar.open .logo-details .logo_name{
   opacity: 1;
@@ -76,10 +88,18 @@
 .sidebar.open .logo-details #btn{
   text-align: right;
 }
-.sidebar i{
+.sidebar .open i{
   color: #fff;
   height: 60px;
   min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar  i{
+  color: #fff;
+  height: 60px;
+  min-width: 20px;
   font-size: 28px;
   text-align: center;
   line-height: 60px;
@@ -274,6 +294,7 @@
 #simulator-page{
   width: 100%;
   height: 100%;
+  color: white;
 }
 
 @media (max-width: 720px) {
@@ -292,6 +313,7 @@
     margin: 0 auto;
     overflow-y: auto;
     height: 450px;
+    color: white;
 }
 
 .assets-table>tbody>tr>td,
@@ -299,6 +321,7 @@
 .assets-table>thead>tr>td,
 .assets-table>thead>tr>th {
     border: 0;
+    color: white;
 }
 
 .hide {
@@ -331,8 +354,6 @@
     margin-bottom: 40px;
     margin-left: 10px;
     border-radius: 15px 50px 30px 5px;
-    border: 2px solid;
-    border-color: black;
     border-spacing: 1px;
     text-align: center;
     padding: 5px;
@@ -350,9 +371,10 @@
 }
 
 #resultTable th {
-    color: gray;
+    color: #ff960b;
     text-align: center;
     font-size: 30px;
+    border-bottom: 1px solid white;
     font-family: Arial, Helvetica, sans-serif;
     padding: 1px 1px 1px 1px;
 
@@ -360,9 +382,10 @@
 }
 
 #resultTable td {
-    color: black;
+    color: white;
     text-align: center;
     font-size: 14px;
+    border-bottom: 1px solid white;
     font-family: Arial, Helvetica, sans-serif;
     padding: 2px 2px 2px 2px;
 }
@@ -372,9 +395,7 @@
     margin-bottom: 40px;
     margin-left: 10px;
     border-radius: 15px 10px 12px 5px;
-    border: 2px solid;
-    border-color: black;
-    border-spacing: 1px;
+    /* border-spacing: 1px; */
     text-align: center;
     padding: 2px;
     font: 24px/36px sans-serif;
@@ -391,24 +412,26 @@
 }
 
 #growingTable th {
-    color: gray;
+    color: #ff960b;
     text-align: center;
     font-size: 16px;
+    border-bottom: 1px solid white;
     font-family: Arial, Helvetica, sans-serif;
     padding: 1px 1px 1px 1px;
 }
 
 #growingTable td {
-    color: black;
+    color: white;
     text-align: center;
     font-size: 17px;
+    border-bottom: 1px solid white;
     font-family: Arial, Helvetica, sans-serif;
     padding: 1px 1px 1px 1px;
 
 }
 
 #heading {
-    color: black;
+    color: #ff960b;
     margin-left: 200px;
     margin-right: 980px;
     margin-bottom: -20px;
@@ -418,12 +441,10 @@
 }
 
 #fallingTable {
-    margin-top: -455px;
+    margin-top: -440px;
     margin-bottom: 40px;
     margin-left: 700px;
     border-radius: 15px 10px 12px 5px;
-    border: 2px solid;
-    border-color: black;
     border-spacing: 1px;
     text-align: center;
     padding: 2px;
@@ -441,24 +462,26 @@
 }
 
 #fallingTable th {
-    color: gray;
+    color: #ff960b;
     text-align: center;
     font-size: 16px;
+    border-bottom: 1px solid white;
     font-family: Arial, Helvetica, sans-serif;
     padding: 1px 1px 1px 1px;
 }
 
 #fallingTable td {
-    color: black;
+    color: white;
     text-align: center;
     font-size: 18px;
+    border-bottom: 1px solid white;
     font-family: Arial, Helvetica, sans-serif;
     padding: 1px 1px 1px 1px;
 
 }
 
 #heading2 {
-    color: black;
+    color: #ff960b;
     margin-left: 800px;
     margin-right: 100px;
     margin-top: -44px;
@@ -487,8 +510,7 @@
 /*#region Home page css*/
 #home-page{
     width: 100%;
-    height: 100vh;
-    /* background-color: #590dab; */
+    height: 100%;
     background-position: center;
     background-size: cover;
     padding: 10px 240px 30px 320px;
@@ -499,6 +521,7 @@
 .content-homePage h1{
     font-size: 88px;
     margin-bottom: 12px;
+    color: #ff960b;
 
 }
 .content-homePage h1 span{
@@ -507,7 +530,11 @@
 .content-homePage p{
     line-height: 22px;
     font-size: 18px;
+    color: #ff960b;
 
+}
+.paragraph{
+  color: #ff960b;
 }
 .content-homePage .btn{
     display: inline-block;
@@ -599,24 +626,27 @@
     margin: 10px;
     width: 83%;
     height: 90vh;
-    background-color: white;
+    background-color: transparent;
     background-position: center;
     overflow: hidden;
     margin-top: 0px;
+    width: 100%;
+    height: 100%;
 
 }
 
 .nav-bar{
-    top: 18%;
+    top: 12%;
     width: 330px;
     height: 100vh;
+    left: 5%;
     
 position: absolute;
 }
 
 .information-text{
     width: 44%;
-    height: 100vh;
+    height: 90vh;
     right: 26%;
     position: absolute;
     margin: 10px;
@@ -624,7 +654,7 @@ position: absolute;
     scrollbar-width: none; /* for Firefox */
     overflow-y: scroll;
     bottom: 3%;
-    top: 5%;
+    top: 6%;
 
 
 }
@@ -635,7 +665,7 @@ position: absolute;
     display: none;
 }
 h3{
-    color: black;
+    color:white;
     text-align: center;
     margin: 15px;
     font-size: 25px;
@@ -643,8 +673,8 @@ h3{
 }
 .content{
     margin-left: 5px;
-    border-left: 2px solid black;
-    color: black;
+    /* border-left: 2px solid black; */
+    color:white;
     font-size: 20px;
     justify-content: center;
     padding: 20px;
@@ -655,20 +685,20 @@ h3{
 }
 .content a{
     text-decoration: none;
-    color: black;
+    color:white;
 }
 .content a:hover{
-    color: black;
+    color: #ff960b;
     font-size: 21px;
 }
 .information-text h1{
-    color: black;
+    color:white;
     font-size: 30px;
     /*text-align: center;*/
     margin-bottom: 20px;
 }
 .information-text p{
-    color: black;
+    color:white;
     font-size: 24px;
     line-height: 40px;
 
@@ -792,12 +822,7 @@ h3{
 
 
 /*LogIn and SignUp */
- *:before, *:after{
-  /* margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Nunito', sans-serif; */
-}
+
 body{
   width: 100%;
   height: 100vh;
@@ -819,7 +844,7 @@ input, button{
   position: absolute;
   width: 80%;
   height: 90%;
-  background: #fff;
+  background: whitesmoke;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 105px 12px rgba(0, 0, 0, 0.22);
   margin-top: -22%;
   margin-left: -39%;
@@ -858,7 +883,7 @@ label{
 label span{
   font-size: 14px;
   font-weight: 600;
-  color: #505f75;
+  color:#1d1b31;
   text-transform: uppercase;
 }
 
@@ -961,7 +986,7 @@ button{
   width: 100%;
   height: 100%;
   padding-left: 35%;
-  background: #fff;
+  background: whitesmoke;
   -webkit-transition: -webkit-transform 1.2s ease-in-out;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out;
@@ -1003,7 +1028,7 @@ button{
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.3);
+  background: rgb(7, 7, 26);
 }
 
 .cont.s-signup .img:before{

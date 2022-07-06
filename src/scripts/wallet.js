@@ -14,7 +14,7 @@ const getCoinsDb = () => {
 fetch('https://api.coingecko.com/api/v3/coins/bitcoin?market_data=true')
     .then(data => data.json())
     .then(parsedData => walletCoinData(parsedData))
-    .catch(err => console.err(err))
+    .catch(err => console.log(err))
 
 // Get and print coin data for your wallet
 const walletCoinData = (btc) => {
@@ -39,8 +39,8 @@ const walletCoinData = (btc) => {
                     <td><img src=${coin.image} style="width="40px"; height="40px";"/></td>
                     <td>
                         <div class="wrap">
-                            <span class="wallet-coin-id">${capitalizeWord(coin.id)}</span>
-                            <p class="wallet-coin-symbol"><span>${coin.symbol.toUpperCase()}</span></p>
+                            <span class="wallet-coin-id">${coin.id}</span>
+                            <p class="wallet-coin-symbol"><span>${coin.symbol}</span></p>
                         </div>
                     </td>
                     <td>
@@ -69,7 +69,7 @@ const populateStatisticsSelect = () => {
     const statisticsSelect = $('.statistics-select');
     getCoinsDb().forEach(coin => {
         const newOption = $('<option></option>');
-        newOption.html(capitalizeWord(coin.id));
+        // newOption.html(capitalizeWord(coin.id));
         statisticsSelect.append(newOption);
     });
 }
@@ -126,7 +126,7 @@ const createGraph = (data, coinName) => {
     const btcData = {
         labels: dataLabels,
         datasets: [{
-            label: capitalizeWord(coinName),
+            label: coinName,
             borderWidth: 1.5,
             backgroundColor: 'rgb(14,110,253, 0.2)',
             borderColor: 'rgb(14,110,253)',
@@ -250,6 +250,7 @@ const buyFormData = () => {
 
 const buyForm = (data) => {
     const selectedCoin = $('.buy-select option:selected').text().toLowerCase();
+    console.log(selectedCoin);
     const buyInput = $('#buy-input');
     const recieveInput = $('#buy-form-recieve');
     const coinPrice = $('#coin-price');
@@ -266,7 +267,7 @@ const buyForm = (data) => {
     });
 
     // Calculate and print data to the form
-    coinPrice.text(`1 ${coinData.symbol.toUpperCase()} ≈ ${formatCurrency(coinData.current_price)}`);
+    coinPrice.text(`1 ${coinData.symbol} ≈ ${formatCurrency(coinData.current_price)}`);
     if (buyInput.val() != '') {
         total = buyInput.val() / coinData.current_price;
         recieveInput.val(`${total.toFixed(5)}`);
@@ -321,7 +322,7 @@ $('#buy-btn').click(() => {
 
             let coinExists = false;
             walletCoins.forEach(coin => {
-                if (coin.symbol.toUpperCase() === coinData.symbol.toUpperCase()) {
+                if (coin.symbol === coinData.symbol) {
                     coinExists = true;
                 }
             });
@@ -353,7 +354,7 @@ const populateSellFormSelect = () => {
     // Populate select with wallet coins
     getCoinsDb().forEach(coin => {
         const option = $('<option></option>');
-        option.html(coin.symbol.toUpperCase());
+        option.html(coin.symbol);
         sellbuySelect.append(option);
     });
 }
