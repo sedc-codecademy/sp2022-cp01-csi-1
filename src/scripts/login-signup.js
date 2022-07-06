@@ -18,7 +18,7 @@ let signInButton =  document.getElementById('signInButton');
 
 //Labels and Messages
 let labels = document.getElementsByClassName('form_control');
-let small = document.getElementsByTagName('small');
+let small = document.getElementsByClassName('small');
 
 //Sign up Form
 
