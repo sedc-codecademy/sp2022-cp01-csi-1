@@ -49,3 +49,12 @@ const time = {
     oneMonth: Math.floor(Date.now() / 1000) - 2592000,
     oneYear: Math.floor(Date.now() / 1000) - 31104000
 }
+
+function coinObj (id, symbol, image, estimatedValue, coinsRecieved, currentPrice) {
+    this.id = id;
+    this.symbol = symbol;
+    this.image = image;
+    this.estimatedValue = estimatedValue;
+    this.coinsRecieved = coinsRecieved;
+    this.currentPrice = currentPrice;
+}

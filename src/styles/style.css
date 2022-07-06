@@ -17,12 +17,12 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: orange;
+  background: rgb(155, 155, 155);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: orange;
+  background: rgb(119, 119, 119);
 }
 
 /* #region Nav Bar*/
@@ -54,7 +54,6 @@
   opacity: 0;
   transition: all 0.5s ease;
   color: orange;
-
 }
 
 .sidebar .logo-details .logo_name {
@@ -328,7 +327,7 @@
   background-image: url("/assets/bg1.jpg");
   background-size: cover;
   background-position: bottom;
-  color: white;
+
 }
 
 .container-md {
@@ -340,7 +339,7 @@
 .assets-table-wrapper {
   margin: 0 auto;
   overflow-y: auto;
-  height: 450px;
+  height: 500px;
 }
 
 .assets-table>tbody>tr>td,
@@ -348,7 +347,6 @@
 .assets-table>thead>tr>td,
 .assets-table>thead>tr>th {
   border: 0;
-  color: white;
 }
 
 .hide {
@@ -381,6 +379,18 @@
   -moz-appearance: textfield;
 }
 
+#buy-popup-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 0 !important;
+}
+
+.simulator-btns {
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: #1b4d89
+}
+
 /* #endregion */
 
 /*#region statistics css*/
@@ -398,24 +408,7 @@
   height: 450px;
 }
 
-#growingTable {
-  color: white;
-}
-
-#fallingTable {
-  color: white;
-}
-
-#resultTable {
-  color: white
-}
-
-#search {
-  color: white;
-}
-
 #heading {
-  color: white;
   margin-left: 200px;
   margin-right: 980px;
   margin-bottom: -20px;
@@ -425,7 +418,6 @@
 }
 
 #heading2 {
-  color: white;
   margin-right: 100px;
   margin-top: -44px;
   margin-bottom: -19px;
@@ -458,7 +450,6 @@
   background-position: center;
   background-size: cover;
   padding: 10px 240px 30px 320px;
-  color: white;
   position: relative;
 }
 
@@ -485,7 +476,6 @@
   text-decoration: none;
   padding: 15px 30px;
   border-radius: 30px;
-  color: white;
 }
 
 .cards {
@@ -622,27 +612,22 @@
 }
 
 h3 {
-  color: white;
   margin: 15px;
   font-size: 25px;
 }
 
 .content {
   margin-left: 5px;
-  border-left: 2px solid white;
-  color: white;
+  border-left: 1px solid white;
   font-size: 20px;
   justify-content: center;
   padding: 20px;
   line-height: 40px;
   display: inline-block;
-
-
 }
 
 .content a {
   text-decoration: none;
-  color: white;
 }
 
 .content a:hover {
@@ -651,18 +636,14 @@ h3 {
 }
 
 .information-text h1 {
-  color: white;
   font-size: 30px;
   /*text-align: center;*/
   margin-bottom: 20px;
 }
 
 .information-text p {
-  color: white;
   font-size: 24px;
   line-height: 40px;
-
-
 }
 
 .bi {
@@ -704,7 +685,6 @@ h3 {
   }
 
   .content a {
-    color: white;
     font-size: 22px;
   }
 
@@ -721,7 +701,6 @@ h3 {
     margin: 0px;
     top: 2;
     padding: 15px;
-    color: white;
     position: relative;
   }
 
@@ -733,8 +712,6 @@ h3 {
     top: 2%;
     width: 23px;
     height: 23px;
-    color: white;
-
   }
 }
 
@@ -797,112 +774,96 @@ h3 {
 /* #endregion */
 
 /* #region LogIn and SignUp */
-body {
+body{
   width: 100%;
-  height: 97vh;
-  background-image: url("/assets/bg1.jpg");
-  background-position: center;
-  background-size: cover;
+  height: 100vh;
+  font-family: 'Nunito', sans-serif;
 }
 
-#login-page h2 {
-  color: orange;
-}
-
-input,
-button {
-  border: none;
+input, button{
+  border:none;
   outline: none;
   background: none;
 }
 
-.cont {
+.cont{
   overflow: hidden;
   position: absolute;
   width: 80%;
+  height: 90%;
+  background: whitesmoke;
   height: 95%;
+  background: #fff;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 105px 12px rgba(0, 0, 0, 0.22);
 }
 
-.form {
+.form{
   position: relative;
   margin-left: -4.5%;
   margin-top: 2%;
   width: 70%;
   height: 90%;
   padding: 10%;
-  -webkit-transition: -webkit-transform 1.2s ease-in-out;
+  -webkit-transition:-webkit-transform 1.2s ease-in-out;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
-  background-size: cover;
-  background-image: url("/assets/bg1.jpg");
-  color: white;
 }
 
-.form.sign-up {
+.form.sign-up{
   width: 100%;
 }
 
-h2 {
+h2{
   width: 100%;
   font-size: 30px;
-  color: white;
 }
 
-label {
+label{
   display: block;
   margin: 20px auto 0;
 }
 
-label span {
+label span{
   font-size: 14px;
   font-weight: 600;
-  color: white;
+  color:#1d1b31;
   text-transform: uppercase;
 }
 
-input {
+input{
   display: block;
   width: 100%;
   margin-top: 5px;
   font-size: 16px;
   padding-bottom: 5px;
   border-bottom: 1px solid rgba(109, 93, 93, 0.4);
-  color: white;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Nunito', sans-serif; 
 }
-
-.form_control.success input {
+.form_control.success input { 
 
   border-bottom: 2px solid green;
 }
-
 .form_control.error input {
-  border-bottom: 2px solid red;
+  border-bottom:2px solid red;
 }
-
-.form_control small {
-  visibility: hidden;
+.form_control small{
+visibility: hidden;
 
 }
-
-.form_control.error small {
-  visibility: visible;
-  color: red;
+.form_control.error small{
+visibility: visible;
+color: red;
 }
-
-.form_control.success i .bx-check-circle {
-  color: green;
-  visibility: visible;
+.form_control.success i .bx-check-circle{
+color: green;
+visibility: visible;
 }
-
-.form_control.error i .bx-x-circle {
-  color: red;
-  visibility: visible;
+.form_control.error i .bx-x-circle{
+color: red;
+visibility: visible;
 }
-
-button {
+button{
   display: block;
   margin: 5px auto;
   width: 200px;
@@ -913,20 +874,20 @@ button {
   cursor: pointer;
 }
 
-.submit {
+.submit{
   margin-top: 5%;
   margin-bottom: 5%;
   text-transform: uppercase;
   font-weight: 600;
   font-family: 'Nunito', sans-serif;
-  background: -webkit-linear-gradient(left, #7579ff, orange);
+  background: -webkit-linear-gradient(left, #7579ff, #ef2424);
 }
 
-.submit:hover {
-  background: -webkit-linear-gradient(left, orange, #7579ff);
+.submit:hover{
+  background: -webkit-linear-gradient(left, #ef2424, #7579ff);
 }
 
-.forgot-pass {
+.forgot-pass{
   margin-top: 1%;
   text-align: center;
   font-size: 14px;
@@ -935,50 +896,51 @@ button {
   cursor: pointer;
 }
 
-.forgot-pass:hover {
+.forgot-pass:hover{
   color: red;
 }
 
-.social-media {
+.social-media{
   width: 100%;
   text-align: center;
   margin-top: 20px;
 }
 
-.social-media ul {
+.social-media ul{
   list-style: none;
 }
 
-.social-media ul li {
+.social-media ul li{
   display: inline-block;
   cursor: pointer;
   margin: 25px 15px;
 }
 
-.social-media img {
+.social-media img{
   width: 40px;
   height: 40px;
 }
 
-.sub-cont {
+.sub-cont{
   overflow: hidden;
   position: absolute;
-  left: 70%;
-  top: 0;
+  left: 68%;
+  top:0 ;
   width: 100%;
   height: 100%;
-  padding-left: 37%;
+  padding-left: 35%;
+  background: whitesmoke;
   -webkit-transition: -webkit-transform 1.2s ease-in-out;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out;
 }
 
-.cont.s-signup .sub-cont {
-  -webkit-transform: translate3d(-68%, 0, 0);
-  transform: translate3d(-68%, 0, 0);
+.cont.s-signup .sub-cont{
+  -webkit-transform:translate3d(-68%, 0, 0);
+          transform:translate3d(-68%, 0, 0);
 }
 
-.img {
+.img{
   overflow: hidden;
   z-index: 2;
   position: absolute;
@@ -989,37 +951,35 @@ button {
   padding-top: 50%;
 }
 
-.img:before {
+.img:before{
   content: '';
   position: absolute;
   right: 0;
   top: 0;
   width: 1000px;
   height: 100%;
-  background-image: url("assets/bg1.jpg");
+  background-image: url(images/bg1.jpg);
   background-size: cover;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
 }
 
-.img:after {
+.img:after{
   content: '';
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-image: url("/assets/bg1.jpg");
-  background-position: bottom;
+  background: rgb(7, 7, 26);
 }
 
-.cont.s-signup .img:before {
-  -webkit-transform: translate3d(80%, 0, 0);
-  transform: translate3d(60%, 0, 0);
+.cont.s-signup .img:before{
+  -webkit-transform:translate3d(80%, 0, 0);
+          transform:translate3d(60%, 0, 0);
 }
 
-.img-text {
+.img-text{
   z-index: 2;
   position: absolute;
   left: 0;
@@ -1028,59 +988,59 @@ button {
   padding: 0 1%;
   text-align: center;
   color: #fff;
-  -webkit-transition: -webkit-transform 1.2s ease-in-out;
+  -webkit-transition:-webkit-transform 1.2s ease-in-out;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
 }
 
-.img-text h2 {
+.img-text h2{
   margin-bottom: 5%;
   font-weight: normal;
 }
 
-.img-text p {
+.img-text p{
   font-size: 14px;
   line-height: 1.5;
 }
 
-.cont.s-signup .img-text.m-up {
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+.cont.s-signup .img-text.m-up{
+  -webkit-transform:translateX(100%);
+          transform:translateX(100%);
 }
 
-.img-text.m-in {
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+.img-text.m-in{
+  -webkit-transform:translateX(-100%);
+          transform:translateX(-100%);
 }
 
-.cont.s-signup .img-text.m-in {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
+.cont.s-signup .img-text.m-in{
+  -webkit-transform:translateX(0);
+          transform:translateX(0);
 }
 
 
-.sign-in {
+.sign-in{
   padding-top: 5%;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
+  -webkit-transition-timing-function:ease-out;
+          transition-timing-function:ease-out;
 }
 
-.cont.s-signup .sign-in {
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  -webkit-transition-duration: 1.2s;
-  transition-duration: 1.2s;
-  -webkit-transform: translate3d(12%, 0, 0);
-  transform: translate3d(12%, 0, 0);
+.cont.s-signup .sign-in{
+  -webkit-transition-timing-function:ease-in-out;
+          transition-timing-function:ease-in-out;
+  -webkit-transition-duration:1.2s;
+          transition-duration:1.2s; 
+  -webkit-transform:translate3d(12%, 0, 0);
+          transform:translate3d(12%, 0, 0);
 }
 
-.img-btn {
+.img-btn{
   overflow: hidden;
   z-index: 2;
   position: relative;
   width: 50%;
   height: 36px;
-  margin: auto;
+  margin:auto;
   background: transparent;
   color: #fff;
   text-transform: uppercase;
@@ -1088,8 +1048,8 @@ button {
   cursor: pointer;
 }
 
-.img-btn:after {
-
+.img-btn:after{
+  
   content: '';
   z-index: 2;
   position: absolute;
@@ -1101,54 +1061,52 @@ button {
   border-radius: 30px;
 }
 
-.img-btn span {
+.img-btn span{
   position: absolute;
   left: 0;
   top: 0;
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
+  -webkit-box-pack:center;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  -webkit-transition: -webkit-transform 1.2s;
+  -webkit-transition:-webkit-transform 1.2s;
   transition: -webkit-transform 1.2s;
   transition: transform 1.2s;
-  transition: transform 1.2s, -webkit-transform 1.2s;
-  ;
+  transition: transform 1.2s, -webkit-transform 1.2s;;
 }
 
-.img-btn span.m-in {
-  -webkit-transform: translateY(-72px);
-  transform: translateY(-72px);
+.img-btn span.m-in{
+  -webkit-transform:translateY(-72px);
+          transform:translateY(-72px);
 }
 
-.cont.s-signup .img-btn span.m-in {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
+.cont.s-signup .img-btn span.m-in{
+  -webkit-transform:translateY(0);
+          transform:translateY(0);
 }
 
-.cont.s-signup .img-btn span.m-up {
-  -webkit-transform: translateY(72px);
-  transform: translateY(72px);
+.cont.s-signup .img-btn span.m-up{
+  -webkit-transform:translateY(72px);
+          transform:translateY(72px);
 }
 
-.sign-up {
-  -webkit-transform: translate3d(-900px, 0, 0);
-  transform: translate3d(-900px, 0, 0);
+.sign-up{
+  -webkit-transform:translate3d(-900px, 0, 0);
+          transform:translate3d(-900px, 0, 0);
 }
 
-.cont.s-signup .sign-up {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+.cont.s-signup .sign-up{
+  -webkit-transform:translate3d(0, 0, 0);
+          transform:translate3d(0, 0, 0);
 }
 
 @media (max-width: 480px) {
-  .img-btn {
+  .img-btn{
     margin-top: 80%;
     width: 80%;
   }
 }
-
 /* #endregion */

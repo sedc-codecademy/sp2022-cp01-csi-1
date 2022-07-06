@@ -173,14 +173,9 @@
 
   <section id="simulator-page">
     <!-- #region Simulator -->
-    <div class="container-md mb-3">
-      <div>
-        <h2>
-          Dashboard
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 bg-white shadow rounded border m-2 sections">
+    <div class="container-md" style="padding-top: 100px;">
+      <div class="row m-0">
+        <div class="col-lg-4 m-2 border sections">
           <div class="row pt-3 mb-3">
             <div class="border-bottom">
               <div>
@@ -199,10 +194,15 @@
                   </tbody>
                 </table>
               </div>
+              <button type="button" class="btn btn-primary btn-lg my-0 simulator-btns" data-bs-toggle="modal"
+                data-bs-target="#staticBuyModal" id="buy-popup-btn">
+                Buy Crypto
+              </button>
             </div>
           </div>
         </div>
-        <div class="col-lg shadow rounded border m-2 sections">
+
+        <div class="col-lg m-2 border sections">
           <div class="row text-center mb-3 p-2 border-bottom time-nav">
             <div class="col-2">
               <a class="nav-link fifteenMinutes time-links">15m</a>
@@ -223,7 +223,7 @@
               <a class="nav-link oneYear time-links">1y</a>
             </div>
           </div>
-          <div>
+          <div class="simulator-chart-wrapper">
             <canvas id="chart" class="mb-2">
 
             </canvas>
@@ -261,61 +261,75 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="container-md mb-3">
-      <div>
-        <h2>Exchange</h2>
-      </div>
-      <div class="row ">
-        <div class="col-lg rounded shadow border m-2 sections">
-          <form class="p-4">
-            <div class="d-flex justify-content-between">
-              <div>
-                <h2>Buy</h2>
-              </div>
-              <div>
-                <h2 class="text-secondary" id="coin-price"></h2>
+      <!-- Buy Modal -->
+      <div class="modal fade" id="staticBuyModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBuyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="text-center">
+                <h4 class="text-secondary" id="coin-price"></h4>
               </div>
             </div>
-            <div class="form-group mb-3">
-              <label for="buy-input">Spend</label>
-              <input type="number" class="form-control" id="buy-input" step="any" placeholder="15.00 - 50000.00">
-              <small id="buy-validation" class="form-text text-danger mb-1"></small>
-            </div>
-            <div class="form-group mb-3">
-              <label for="buy-form-recieve">Recieve</label>
-              <input type="text" class="form-control" id="buy-form-recieve" placeholder="0" disabled>
-            </div>
-            <div class="form-group mb-3">
-              <label>Choose Crypto</label>
-              <select class="form-select buy-select">
+            <div class="modal-body">
+              <form>
+                <div class="form-group mb-3">
+                  <label for="buy-input">Spend</label>
+                  <input type="number" class="form-control" id="buy-input" step="any" placeholder="15.00 - 50000.00">
+                  <small id="buy-validation" class="form-text text-danger mb-1"></small>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="buy-form-recieve">Recieve</label>
+                  <input type="text" class="form-control" id="buy-form-recieve" placeholder="0" disabled>
+                </div>
+                <div class="form-group mb-3">
+                  <label>Choose Crypto</label>
+                  <select class="form-select buy-select">
 
-              </select>
+                  </select>
+                </div>
+                <div class="d-flex justify-content-evenly">
+                  <button type="submit" class="btn btn-primary disabled w-35 simulator-btns" data-bs-dismiss="modal"
+                    id="buy-btn">Buy</button>
+                  <button type="button" class="btn btn-secondary w-35" data-bs-dismiss="modal">Close</button>
+                </div>
+              </form>
             </div>
-            <input type="submit" class="btn btn-lg btn-primary px-5 w-50" id="buy-btn" value="Buy"></input>
-          </form>
+          </div>
         </div>
-        <div class="col-lg rounded shadow border m-2 sections">
-          <form class="p-4">
-            <h2>Sell</h2>
-            <div class="form-group mb-3">
-              <label for="sell-input">Spend</label>
-              <input type="number" class="form-control" id="sell-input" placeholder="0" step="any">
-              <small id="sell-validation" class="form-text text-danger"></small>
-            </div>
-            <div class="form-group mb-3">
-              <label for="sell-form-recieve">Recieve</label>
-              <input type="text" class="form-control" id="sell-form-recieve" placeholder="0" disabled>
-            </div>
-            <div class="form-group mb-3">
-              <label>Choose Crypto</label>
-              <select class="form-select" id="sell-select">
+      </div>
 
-              </select>
+      <!-- Sell Modal -->
+      <div class="modal fade" id="staticSellModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticSellModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <form class="p-4">
+                <div class="form-group mb-3">
+                  <label for="sell-input">Spend</label>
+                  <input type="number" class="form-control" id="sell-input" placeholder="0" step="any">
+                  <small id="sell-validation" class="form-text text-danger"></small>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="sell-form-recieve">Recieve</label>
+                  <input type="text" class="form-control" id="sell-form-recieve" placeholder="0" disabled>
+                </div>
+                <div class="form-group mb-3">
+                  <label>Choose Crypto</label>
+                  <select class="form-select" id="sell-select">
+
+                  </select>
+                </div>
+                <div class="d-flex justify-content-evenly">
+                  <button type="submit" class="btn btn-primary disabled w-35 simulator-btns" id="sell-btn"
+                    data-bs-dismiss="modal">Sell</button>
+                  <button type="button" class="btn btn-secondary w-35" data-bs-dismiss="modal">Close</button>
+                </div>
+              </form>
             </div>
-            <input type="submit" class="btn btn-lg btn-primary px-5 disabled w-50" id="sell-btn" value="Sell"></input>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -685,8 +699,6 @@
 <script src="./libs/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
 <script src="./scripts/main.js"></script>
 <script src="./scripts/homePage.js"></script>
