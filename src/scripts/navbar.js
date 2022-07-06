@@ -1,6 +1,5 @@
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
-let searchBtn = document.querySelector(".bx-search");
 let logInBtn = document.querySelector(".bx-user-circle");
 let homeBtn =  document.querySelector(" bx-home-circle");
 let statisticBtn = document.querySelector("bx-line-chart");
@@ -30,10 +29,7 @@ closeBtn.addEventListener("click", ()=>{
   
 });
 
-searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
-  sidebar.classList.toggle("open");
-  menuBtnChange(); //calling the function
-});
+
 logInBtn.addEventListener("click",()=>{
   sidebar.classList.toggle("open");
   menuBtnChange();
