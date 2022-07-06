@@ -26,41 +26,36 @@
       </div>
       <ul class="nav-list">
         <li>
-            <i class='bx bx-search' ></i>
-           <input type="text" placeholder="Search...">
-           <span class="tooltip">Search</span>
-        </li>
-        <li>
           <a href="#" id="view_homepage">
-            <i class='bx bx-home-circle' ></i>
+            <i class='bx bx-home-circle'id="circle" ></i>
             <span class="links_name">Home</span>
           </a>
            <span class="tooltip">Home</span>
         </li>
         <li>
          <a href="#" id="view_statistic">
-          <i class='bx bx-line-chart'  ></i>
+          <i class='bx bx-line-chart' id="chart" ></i>
            <span class="links_name">Statistic</span>
          </a>
          <span class="tooltip">Statistic</span>
        </li>
        <li>
          <a href="#" id="view_simulator">
-          <i class='bx bx-pie-chart-alt-2' ></i>
+          <i class='bx bx-pie-chart-alt-2' id="simulator"></i>
            <span class="links_name">Simulator</span>
          </a>
          <span class="tooltip">Simulator</span>
        </li>
        <li>
          <a href="#" id="view_info">
-          <i class='bx bx-help-circle'></i>
+          <i class='bx bx-help-circle' id="help-circle"></i>
            <span class="links_name">Info</span>
          </a>
          <span class="tooltip">Info</span>
        </li>
        <li>
          <a href="#" id="view_login">
-          <i class='bx bx-user-circle'></i>
+          <i class='bx bx-user-circle' id="user-circle"></i>
            <span class="links_name">Log In / Sign up</span>
          </a>
          <span class="tooltip">Log In / Sign up</span>
@@ -81,19 +76,24 @@
       
       <div class="content-homePage">
           <h1>BUY & <br>SELL <span>Crypto</span></h1>
-          <p>World's biggest Cryptocurrency exchange available on web<Br> as well as mobile phone.</p>
+          <p class="paragraph">World's biggest Cryptocurrency exchange available on web<Br> as well as mobile phone.</p>
           <a href="#" class="btn">EXPLORE MORE</a>
       </div>
      <div id="cards">
               
-     </div>
+     </div><br><br><br><br>
+     <div>ABOUT US</div>
+     <div>CONTACT US</div>
+     <div>S</div>
+     
   </section>
   <section id="statistics-page"  >
     <!--#region Statistics-->
-    <h2 id="heading">All Growing</h2>
+     <input id="search" type="text" placeholder="Search coin..." name="search"><br><br><br>
+    <!-- <h2 id="heading">All Growing</h2>
     <img id="img1" src="./assets/rising-arrow.jpg" />
     <h2 id="heading2">All Falling</h2>
-    <img id="img2" src="./assets/falling-arrow.jpg" />
+    <img id="img2" src="./assets/falling-arrow.jpg" /> --> -->
     <table id="growingTable" cellpadding="1" cellspacing="1">
       <tbody>
         <tr>
@@ -120,7 +120,6 @@
       </tbody>
     </table>
 
-    <input id="search" type="text" placeholder="Search coin..." name="search">
 
     <table id="resultTable" cellpadding="1" cellspacing="1">
       <tbody div="scroll">
@@ -489,10 +488,12 @@
         <label>
           <span>Email Address</span>
           <input type="email" name="email" id="emailSignIn">
+          <small class="login-small"></small>
         </label>
         <label>
           <span>Password</span>
           <input type="password" name="password" id="passwordSignIn">
+          <small class="login-small"></small>
         </label>
         <button class="submit" type="button" id="signInButton">Sign In</button>
         <!-- <p class="forgot-pass">Forgot Password ?</p> -->
