@@ -7,10 +7,11 @@ const formatCurrency = (cur) => {
 }
 
 // Capitalize word
-const capitalizeWord = (word) => {
-    const lower = word.toLowerCase();
-    return word.charAt(0).toUpperCase() + lower.slice(1);
-}
+// const capitalizeWord = (word) => {
+//     const lower = word.toLowerCase();
+//     return word.charAt(0).toUpperCase() + lower.slice(1);
+// }
+
 
 // Sort numbers in descending order
 const numberSort = (arr) => {
