@@ -1,12 +1,13 @@
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
-let searchBtn = document.querySelector(".bx-search");
+// let searchBtn = document.querySelector(".bx-search");
 let logInBtn = document.querySelector(".bx-user-circle");
 let homeBtn =  document.querySelector(" bx-home-circle");
 let statisticBtn = document.querySelector("bx-line-chart");
 // let simulatorBtn = doument.querySelector("bx-pie-chart-alt-2");
 let infoBtn = document.querySelector("bx-help-circle");
-let sidebarById = document.getElementById("#sidebars");
+let sidebarById = document.getElementById("sidebars");
+let sideBarByClass = document.getElementsByClassName("sidebar");
 
 //Profile elements
 let profileElement = document.getElementById("profile");
@@ -15,6 +16,7 @@ let welcomeElement = document.getElementById("welcome");
 let nameElement = document.getElementById("nameOfUser");
 let logOutBtn = document.getElementById('log_out');
 logOutBtn.style.visibility = 'hidden';
+let logInSignUp = document.getElementById('login-signup');
 
 //localStorage Data needed for creating profile
 let name = localStorage.getItem('name');
@@ -27,13 +29,12 @@ let emailForLogIn = localStorage.getItem('email');
 closeBtn.addEventListener("click", ()=>{
   sidebar.classList.toggle("open");
   menuBtnChange();//calling the function
+  sideBarByClass.classList ='sidebar open';
   
 });
 
-searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
-  sidebar.classList.toggle("open");
-  menuBtnChange(); //calling the function
-});
+
+
 logInBtn.addEventListener("click",()=>{
   sidebar.classList.toggle("open");
   menuBtnChange();

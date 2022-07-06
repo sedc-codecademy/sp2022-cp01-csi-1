@@ -20,18 +20,13 @@
 
 <body>
   <nav id="navigation">
-    <div class="sidebar" id="sidebars">
+    <div class="sidebar close" id="sidebars">
       <div class="logo-details">
         <i class='bx bx-coin-stack'></i>
           <div class="logo_name">Crypto Simulator</div>
           <i class='bx bx-menu' id="btn" ></i>
       </div>
       <ul class="nav-list">
-        <li>
-            <i class='bx bx-search' ></i>
-           <input type="text" placeholder="Search...">
-           <span class="tooltip">Search</span>
-        </li>
         <li>
           <a href="#" id="view_homepage">
             <i class='bx bx-home-circle' ></i>
@@ -65,7 +60,7 @@
           <i class='bx bx-user-circle'></i>
            <span class="links_name">Log In / Sign up</span>
          </a>
-         <span class="tooltip">Log In / Sign up</span>
+         <span class="tooltip" id="login-signup">Log In / Sign up</span>
        </li>
    
        <li class="profile" id="profile">
@@ -94,7 +89,7 @@
     <!--#region Statistics-->
     <h2 id="heading">All Growing</h2>
     <img id="img1" src="./assets/rising-arrow.jpg" />
-    <h2 id="heading2">All Falling</h2>
+    <!-- <h2 id="heading2">All Falling</h2> -->
     <img id="img2" src="./assets/falling-arrow.jpg" />
     <table id="growingTable" cellpadding="1" cellspacing="1">
       <tbody>
