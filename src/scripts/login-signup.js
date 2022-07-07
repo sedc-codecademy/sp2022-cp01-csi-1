@@ -16,9 +16,10 @@ let signInEmail = document.getElementById('emailSignIn');
 let signInPassword = document.getElementById('passwordSignIn');
 let signInButton =  document.getElementById('signInButton');
 
+
 //Labels and Messages
 let labels = document.getElementsByClassName('form_control');
-let small = document.getElementsByTagName('small');
+let small = document.getElementsByClassName('small');
 
 //Sign up Form
 
@@ -54,13 +55,15 @@ function SignIn(email,password){
 	let formData = JSON.parse(localStorage.getItem('formData')) || [];
     
 	if(formData.some(data => data.emails == email && data.pass == password)){
-		
-		alert("Success");
+		let logInButtonDissapear = document.getElementById("main-login-element");
+		console.log(logInButtonDissapear);
+		// alert("Success");
 		let current_user=formData.filter((v)=>{return v.emails==email && v.pass==password})[0];
 		console.log(current_user);
 		localStorage.setItem('name',current_user.name);
 		localStorage.setItem('email',current_user.emails);
 		window.location.href= "index.html";
+		
 	}
 	else{
 		alert('There is no such user');
