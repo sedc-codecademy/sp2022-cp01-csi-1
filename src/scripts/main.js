@@ -7,11 +7,10 @@ const formatCurrency = (cur) => {
 }
 
 // Capitalize word
-// const capitalizeWord = (word) => {
-//     const lower = word.toLowerCase();
-//     return word.charAt(0).toUpperCase() + lower.slice(1);
-// }
-
+const capitalizeWord = (word) => {
+    const lower = word.toLowerCase();
+    return word.charAt(0).toUpperCase() + lower.slice(1);
+}
 
 // Sort numbers in descending order
 const numberSort = (arr) => {
@@ -49,4 +48,13 @@ const time = {
     oneWeek: Math.floor(Date.now() / 1000) - 604800,
     oneMonth: Math.floor(Date.now() / 1000) - 2592000,
     oneYear: Math.floor(Date.now() / 1000) - 31104000
+}
+
+function coinObj (id, symbol, image, estimatedValue, coinsRecieved, currentPrice) {
+    this.id = id;
+    this.symbol = symbol;
+    this.image = image;
+    this.estimatedValue = estimatedValue;
+    this.coinsRecieved = coinsRecieved;
+    this.currentPrice = currentPrice;
 }
