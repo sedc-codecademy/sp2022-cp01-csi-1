@@ -55,7 +55,7 @@
          </a>
          <span class="tooltip">Info</span>
        </li>
-       <li id="main-login-element">
+       <li >
          <a href="#" id="view_login">
           <i class='bx bx-user-circle' id="user-circle"></i>
            <span class="links_name">Log In / Sign up</span>
@@ -218,7 +218,7 @@
             </div>
           </div>
           <div class="simulator-chart-wrapper">
-            <canvas id="chart" class="mb-2">
+            <canvas id="chart-one" class="mb-2">
 
             </canvas>
           </div>
@@ -527,15 +527,15 @@
   <section id="login-page" >
     <div class="cont">
       <div class="form sign-in">
-        <h2>Sign In</h2>
-        <label>
+        <h2 class="h2-login">Sign In</h2>
+        <label class="login-labels">
           <span>Email Address</span>
-          <input type="email" name="email" id="emailSignIn">
+          <input class = "input-login" type="email" name="email" id="emailSignIn">
           <small class="login-small"></small>
         </label>
-        <label>
+        <label class="login-labels">
           <span>Password</span>
-          <input type="password" name="password" id="passwordSignIn">
+          <input class = "input-login" type="password" name="password" id="passwordSignIn">
           <small class="login-small"></small>
         </label>
         <button class="submit" type="button" id="signInButton">Sign In</button>
@@ -554,11 +554,11 @@
       <div class="sub-cont">
         <div class="img">
           <div class="img-text m-up">
-            <h2>New here?</h2>
+            <h2 class="h2-login">New here?</h2>
             <p>Sign up and discover great amount of new opportunities!</p>
           </div>
           <div class="img-text m-in">
-            <h2>One of us?</h2>
+            <h2 class="h2-login">One of us?</h2>
             <p>If you already has an account, just sign in. We've missed you!</p>
           </div>
           <div class="img-btn">
@@ -572,23 +572,23 @@
           
           <label class="form_control " id="name-label">
             <span >Name</span>
-            <input type="text"  id="name" autocomplete="off">
+            <input class = "input-login" type="text"  id="name" autocomplete="off">
             <small class="small">Errors</small>
           </label>
           
           <label class="form_control " id="email-label" >
             <span >Email</span>
-            <input type="email" id="email" >
+            <input class = "input-login" type="email" id="email" >
             <small class="small">Error</small>
           </label>
           <label class="form_control " id="password-label" >
             <span >Password</span>
-            <input type="password"  id="password" autocomplete="off">
+            <input class = "input-login" type="password"  id="password" autocomplete="off">
             <small class="small">Error</small>
           </label>
           <label class="form_control " id="checkPass-label">
             <span >Confirm Password</span>
-            <input type="password" id="password-check" autocomplete="off">
+            <input class = "input-login" type="password" id="password-check" autocomplete="off">
             <small class="small">Error</small>
           </label>
           <button type="button" class="submit" id="sub">Sign Up Now</button>
