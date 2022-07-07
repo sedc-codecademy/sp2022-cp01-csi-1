@@ -3,6 +3,7 @@
 } */
 body{
   /* background-image: url("https://holacrypto.com/wp-content/uploads/2020/01/altnews-twitter-back.jpg"); */
+  background-image: url("/bg2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -29,9 +30,9 @@ body{
     background: -webkit-linear-gradient(left,white,rgb(6,6,32));
 }
 
-/*region Nav Bar*/
+/*#region Nav Bar*/
 .sidebar{
-    border-radius: border-box;
+  border-radius: border-box;
   position: fixed;
   left: 0;
   top: 0;
@@ -103,6 +104,7 @@ body{
   line-height: 60px;
 }
 .sidebar .nav-list{
+  padding-left: 2%;
   margin-top: 20px;
   height: 100%;
 }
@@ -374,6 +376,8 @@ body{
 /* #endregion */
 
 /* #endregion */
+
+/* #region Statistics Page */
 #statistics-page {
   /* background-image: url("/assets/bg1.jpg"); */
   background-position: center;
@@ -432,7 +436,7 @@ body{
     height: 100vh;
     background-position: center;
     background-size: cover;
-    padding: 10px 240px 30px 320px;
+    padding: 10px 240px 30px 200px;
     color: #fff;
     position: relative;
 }
@@ -440,16 +444,16 @@ body{
 .content-homePage h1{
     font-size: 88px;
     margin-bottom: 12px;
-    color: #ff960b;
+    color: #fff;
 
 }
 .content-homePage h1 span{
-    color: #ff960b;
+    color: #fff;
 }
 .content-homePage p{
     line-height: 22px;
     font-size: 18px;
-    color: #ff960b;
+    color: #fff;
 
 }
 .paragraph{
@@ -492,6 +496,13 @@ body{
 #contact-us,#about-us,#privacy{
   display: inline;
   margin-left: 20%;
+}
+#about-us,
+#contact-us,
+#privacy{
+  margin-top: 1%;
+  margin-bottom: 3%;
+  color: #FFF;
 }
 
 @media only screen 
@@ -538,8 +549,8 @@ body{
   .singleCard{
     margin-left: 10px;
   }
-
 }
+
 /*#endregion*/
 
 /*#region Information  page css*/
@@ -753,9 +764,9 @@ h3{
         }
         
     }
+/* #endregion */
 
-
-/*LogIn and SignUp */
+/*#region LogIn and SignUp */
 
 
 #login-page{
@@ -776,7 +787,7 @@ input, button{
 .cont{
   overflow: hidden;
   position: absolute;
-  width: 80%;
+  width: 81%;
   height: 90%;
   background: whitesmoke;
   height: 95%;
@@ -1099,3 +1110,4 @@ button{
     width: 80%;
   }
 }
+/* #endregion */

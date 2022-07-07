@@ -46,6 +46,7 @@ if(name != null && name != ''){
   welcomeElement.innerHTML = 'Welcome  : ';
   nameElement.innerHTML = name;
   logOutBtn.style.visibility = 'visible';
+  $('#main-login-element').hide();
 }
 
 
@@ -63,6 +64,7 @@ logOutBtn.addEventListener('click', function(){
   // localStorage.setItem('cryptoWalletsOfMultipleUsers"',JSON.stringify(cryptoWalletValueUsers));
   localStorage.removeItem("coinsDb");
   logOutBtn.style.visibility = 'hidden';
+  $('#main-login-element').show();
 
 })
 
