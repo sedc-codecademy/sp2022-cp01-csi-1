@@ -10,15 +10,16 @@ let sidebarById = document.getElementById("#sidebars");
 
 //Profile elements
 let profileElement = document.getElementById("profile");
-console.log(profileElement)
 let welcomeElement = document.getElementById("welcome");
 let nameElement = document.getElementById("nameOfUser");
 let logOutBtn = document.getElementById('log_out');
 logOutBtn.style.visibility = 'hidden';
 
+
 //localStorage Data needed for creating profile
 let name = localStorage.getItem('name');
 let emailForLogIn = localStorage.getItem('email');
+
 
 
 
@@ -55,8 +56,16 @@ logOutBtn.addEventListener('click', function(){
   nameElement.innerHTML = '';
   localStorage.removeItem('name');
   localStorage.removeItem('email');
+  let localStoragewalletLength = localStorage.getItem("cryptoWalletOfUser");
+  let oneUserCryptoWallet =JSON.parse(localStorage.getItem("cryptoWalletOfUser"));
+  console.log(oneUserCryptoWallet);
+  // let cryptoWalletValueUsers = JSON.parse(localStorage.getItem("cryptoWalletsOfMultipleUsers")) || [];
+  // cryptoWalletValueUsers.push({oneUserCryptoWallet});
+  // localStorage.setItem('cryptoWalletsOfMultipleUsers"',JSON.stringify(cryptoWalletValueUsers));
+  localStorage.removeItem("coinsDb");
   logOutBtn.style.visibility = 'hidden';
   $('#main-login-element').show();
+
 })
 
 
@@ -82,7 +91,6 @@ $(document).on('click', '#view_homepage', function() {
   $('#statistics-page').hide();
   $('#simulator-page').hide();
   $('#info-page').hide();
-
   $('#home-page').show();
 });
 $(document).on('click', '#view_statistic', function() {

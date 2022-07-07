@@ -15,6 +15,8 @@ let submitButton = document.getElementById('sub');
 let signInEmail = document.getElementById('emailSignIn');
 let signInPassword = document.getElementById('passwordSignIn');
 let signInButton =  document.getElementById('signInButton');
+let mainLogInElement = $("#main-login-element");
+
 
 
 //Labels and Messages
@@ -55,9 +57,6 @@ function SignIn(email,password){
 	let formData = JSON.parse(localStorage.getItem('formData')) || [];
     
 	if(formData.some(data => data.emails == email && data.pass == password)){
-		let logInButtonDissapear = document.getElementById("main-login-element");
-		console.log(logInButtonDissapear);
-		// alert("Success");
 		let current_user=formData.filter((v)=>{return v.emails==email && v.pass==password})[0];
 		console.log(current_user);
 		localStorage.setItem('name',current_user.name);
@@ -198,3 +197,5 @@ signInButton.addEventListener('click', function(){
 
 	
 })
+let el =  JSON.parse(localStorage.getItem("formData")).length;
+console.log(el);

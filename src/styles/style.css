@@ -1,7 +1,8 @@
-* {
+/* * {
     font-family: 'Nunito', sans-serif;
-}
+} */
 body{
+  /* background-image: url("https://holacrypto.com/wp-content/uploads/2020/01/altnews-twitter-back.jpg"); */
   background-image: url("/bg2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -810,13 +811,13 @@ input, button{
   width: 100%;
 }
 
-h2{
+.h2-login{
   width: 100%;
   font-size: 30px;
   text-align: center;
 }
 
-label{
+.login-labels, .form_control{
   display: block;
   width: 70%;
   margin: 20px auto 0;
@@ -830,7 +831,7 @@ label span{
   text-transform: uppercase;
 }
 
-input{
+.input-login{
   display: block;
   width: 100%;
   margin-top: 5px;
