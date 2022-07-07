@@ -3,7 +3,18 @@
     padding: 0;
     margin: 0;
 }
+<<<<<<< Updated upstream
 
+=======
+body{
+  background-image: url("../images/bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: #11101D;
+}
+>>>>>>> Stashed changes
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -23,7 +34,12 @@
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(14, 110, 253);
 }
+<<<<<<< Updated upstream
 /* #region Navigation Bar*/
+=======
+
+/*#region Nav Bar*/
+>>>>>>> Stashed changes
 .sidebar{
     border-radius: border-box;
   position: fixed;
@@ -84,6 +100,7 @@
   line-height: 60px;
 }
 .sidebar .nav-list{
+  padding: 2%;
   margin-top: 20px;
   height: 100%;
 }
@@ -270,6 +287,13 @@
 /* #endregion*/
 
 /* #region Wallet */
+<<<<<<< Updated upstream
+=======
+/* #region Simulator */
+#simulator-page{
+  margin-left: 5%;
+}
+>>>>>>> Stashed changes
 @media (max-width: 720px) {
     .sections {
         box-shadow: none !important;
@@ -277,9 +301,17 @@
         margin-right: 0 !important;
     }
 
+<<<<<<< Updated upstream
     body {
         padding: 0;
     }
+=======
+.container-md {
+  
+  background-image: url("/assets/bg1.jpg");
+  background-size: cover;
+  background-position: bottom;
+>>>>>>> Stashed changes
 }
 
 .assets-table-wrapper {
@@ -370,6 +402,7 @@
     width: 50px;
 }
 
+<<<<<<< Updated upstream
 #growingTable tbody {
     height: 400px;
     display: block;
@@ -385,6 +418,17 @@
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     padding: 1px 1px 1px 1px;
+=======
+/* #endregion */
+
+/* #region Statistics Page */
+#statistics-page {
+  margin-left: 5%;
+  /* background-image: url("/assets/bg1.jpg"); */
+  background-position: center;
+  background-size: cover;
+  color: white;
+>>>>>>> Stashed changes
 }
 
 #growingTable td {
@@ -480,21 +524,33 @@
     background-color: grey;
     background-position: center;
     background-size: cover;
+<<<<<<< Updated upstream
     padding: 30px;
+=======
+    padding: 10px 240px 30px 200px;
+>>>>>>> Stashed changes
     color: #fff;
     position: relative;
 }
 .content-homePage h1{
     font-size: 88px;
     margin-bottom: 12px;
+<<<<<<< Updated upstream
+=======
+    color: #fff;
+>>>>>>> Stashed changes
 
 }
 .content-homePage h1 span{
-    color: #ff960b;
+    color: #fff;
 }
 .content-homePage p{
     line-height: 22px;
     font-size: 18px;
+<<<<<<< Updated upstream
+=======
+    color: #fff;
+>>>>>>> Stashed changes
 
 }
 .content-homePage .btn{
@@ -528,8 +584,38 @@
     text-align: center;
     left: 0%;
 }
+<<<<<<< Updated upstream
 #coinName{
     color: #ff960b;
+=======
+#about-us,#contact-us, #privacy{
+  color: white;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  align-items: center;
+}
+
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  
+    .content-homePage h1{
+      font-size: 60px;
+    }
+    #home-page{
+      top: 0%;
+      margin: 0;
+      padding: 40px 40px 10px 120px;
+      -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    }
+    #home-page::-webkit-scrollbar{
+      display: none;
+  }
+
+>>>>>>> Stashed changes
 }
 
 /*#endregion*/
@@ -733,4 +819,3 @@ h3{
         }
         
     }
-/*#endregion*/

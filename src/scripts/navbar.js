@@ -29,6 +29,34 @@ logInBtn.addEventListener("click",()=>{
 } )
 
 
+<<<<<<< Updated upstream
+=======
+
+//Profile Code
+if(name != null && name != ''){
+  welcomeElement.innerHTML = 'Welcome  : ';
+  nameElement.innerHTML = name;
+  logOutBtn.style.visibility = 'visible';
+  $('#main-login-element').hide();
+  
+}
+
+
+//LogOut of progile code
+logOutBtn.addEventListener('click', function(){
+  welcomeElement.innerHTML = '';
+  nameElement.innerHTML = '';
+  localStorage.removeItem('name');
+  localStorage.removeItem('email');
+  logOutBtn.style.visibility = 'hidden';
+  $('#main-login-element').show();
+})
+
+
+
+
+
+>>>>>>> Stashed changes
 // following are the code to change sidebar button(optional)
 function menuBtnChange() {
  if(sidebar.classList.contains("open")){
