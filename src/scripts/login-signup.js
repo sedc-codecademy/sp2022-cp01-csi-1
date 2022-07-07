@@ -16,6 +16,8 @@ let signInEmail = document.getElementById('emailSignIn');
 let signInPassword = document.getElementById('passwordSignIn');
 let signInButton =  document.getElementById('signInButton');
 
+
+
 //Labels and Messages
 let labels = document.getElementsByClassName('form_control');
 let small = document.getElementsByClassName('small');
@@ -61,6 +63,8 @@ function SignIn(email,password){
 		localStorage.setItem('name',current_user.name);
 		localStorage.setItem('email',current_user.emails);
 		window.location.href= "index.html";
+		let logInButtonDissapear = document.getElementById("main-login-element");
+		logInButtonDissapear.style.visibility = "hidden";
 	}
 	else{
 		alert('There is no such user');
