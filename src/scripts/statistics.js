@@ -24,14 +24,22 @@ function statistics(data) {
   for (x of data) {
     let row = "";
     row = `<tr>
-        <td>${x.name}</td>
-        <td>${x.symbol}</td>
-        <td><img src="${x.image} width="18" height="18"/></td>
+        <td><img src="${x.image} width="40" height="40"/></td>
+        <td>
+          <div class="wrap">
+            <span class="wallet-coin-id">${capitalizeWord(x.name)}</span>
+            <p class="wallet-coin-symbol text-secondary" style="font-size: 0.8rem;"><span>${x.symbol.toUpperCase()}</span></p>
+          </div>
+        </td>
         <td>${x.current_price}$</td>
         <td>${x.price_change_percentage_24h}%</td>
         <td>$${x.total_volume.toLocaleString()}</td>
         <td>$${x.market_cap.toLocaleString()}</td>
-        <td><canvas id="${x.name + "chart"}" width="250" height="36"></canvas></td>
+        <td>
+          <div class="chart-container" style="height:36px; width:120px">
+            <canvas id="${x.name + "chart"}"></canvas>
+          </div>
+        </td>
         </tr>`
     coinsTable.append(row);
     const ctx = document.getElementById(x.name + "chart").getContext('2d');
@@ -52,6 +60,9 @@ function statistics(data) {
           legend: {
             display: false
           },
+          tooltip: {
+            enabled: false
+          },
           responsive: false,
         },
         elements: {
@@ -63,16 +74,14 @@ function statistics(data) {
             radius: 0
           }
         },
-        tooltips: {
-          enabled: false
-        },
         scales: {
           x: {
             ticks: {
               display: false
             },
             grid: {
-              display: false
+              display: false,
+              drawBorder: false
             }
           },
           y: {
@@ -80,7 +89,8 @@ function statistics(data) {
               display: false
             },
             grid: {
-              display: false
+              display: false,
+              drawBorder: false
             }
           }
         }
@@ -102,12 +112,20 @@ function growingCoins(data) {
     if (x.price_change_percentage_24h > 0) {
       let row = "";
       row = `<tr>
-                <td>${x.name}</td>
-                <td>${x.symbol}</td>
-                <td><img src="${x.image} width="18" height="18"/></td>
+                <td><img src="${x.image} width="40" height="40"/></td>
+                <td>
+                  <div class="wrap">
+                    <span class="wallet-coin-id">${capitalizeWord(x.name)}</span>
+                    <p class="wallet-coin-symbol text-secondary" style="font-size: 0.8rem;"><span>${x.symbol.toUpperCase()}</span></p>
+                  </div>
+                </td>
                 <td>${x.price_change_percentage_24h}%</td>
                 <td>${x.current_price}$</td>
-                <td><canvas id="${x.name + "chart"}" width="120" height="36"></canvas></td>
+                <td>
+                  <div class="chart-container" style="height:36px; width:120px">
+                    <canvas id="${x.name + "chart"}"></canvas>
+                  </div>
+                </td>
                 </tr>`
       coinsTable.append(row);
       const ctx = document.getElementById(x.name + "chart").getContext('2d');
@@ -128,6 +146,9 @@ function growingCoins(data) {
             legend: {
               display: false
             },
+            tooltip: {
+              enabled: false
+            },
             responsive: false,
           },
           elements: {
@@ -139,16 +160,14 @@ function growingCoins(data) {
               radius: 0
             }
           },
-          tooltips: {
-            enabled: false
-          },
           scales: {
             x: {
               ticks: {
                 display: false
               },
               grid: {
-                display: false
+                display: false,
+                drawBorder: false
               }
             },
             y: {
@@ -156,7 +175,8 @@ function growingCoins(data) {
                 display: false
               },
               grid: {
-                display: false
+                display: false,
+                drawBorder: false
               }
             }
           }
@@ -179,13 +199,21 @@ function fallingCoins(data) {
     if (x.price_change_percentage_24h < 0) {
       let row = "";
       row = `<tr>
-                <td>${x.name}</td>
-                <td>${x.symbol}</td>
-                <td><img src="${x.image} width="18" height="18"/></td>
-                <td>${x.price_change_percentage_24h}%</td>
-                <td>${x.current_price}$</td>
-                <td><canvas id="${x.name + "chart"}" width="120" height="36"></canvas></td>
-                </tr>`
+              <td><img src="${x.image} width="40" height="40"/></td>
+              <td>
+                <div class="wrap">
+                  <span class="wallet-coin-id">${capitalizeWord(x.name)}</span>
+                  <p class="wallet-coin-symbol text-secondary" style="font-size: 0.8rem;"><span>${x.symbol.toUpperCase()}</span></p>
+                </div>
+              </td>
+              <td>${x.price_change_percentage_24h}%</td>
+              <td>${x.current_price}$</td>
+              <td>
+                <div class="chart-container" style="height:36px; width:120px">
+                  <canvas id="${x.name + "chart"}"></canvas>
+                </div>
+              </td>
+            </tr>`
       coinsTable.append(row);
       const ctx = document.getElementById(x.name + "chart").getContext('2d');
 
@@ -205,6 +233,9 @@ function fallingCoins(data) {
             legend: {
               display: false
             },
+            tooltip: {
+              enabled: false
+            },
             responsive: false,
           },
           elements: {
@@ -216,16 +247,14 @@ function fallingCoins(data) {
               radius: 0
             }
           },
-          tooltips: {
-            enabled: false
-          },
           scales: {
             x: {
               ticks: {
                 display: false
               },
               grid: {
-                display: false
+                display: false,
+                drawBorder: false
               }
             },
             y: {
@@ -233,7 +262,8 @@ function fallingCoins(data) {
                 display: false
               },
               grid: {
-                display: false
+                display: false,
+                drawBorder: false
               }
             }
           }
@@ -257,7 +287,7 @@ function myFunction() {
   table = document.getElementById("resultTable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
+    td = tr[i].getElementsByTagName("td")[1];
     if (td) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {

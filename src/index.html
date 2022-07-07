@@ -91,77 +91,96 @@
      </div>
      
   </section>
-  <section id="statistics-page"  >
+  <section id="statistics-page">
     <!--#region Statistics-->
-     <input id="search" type="text" placeholder="Search coin..." name="search"><br><br><br>
-    <!-- <h2 id="heading">All Growing</h2>
-    <img id="img1" src="./assets/rising-arrow.jpg" />
-    <h2 id="heading2">All Falling</h2>
-    <img id="img2" src="./assets/falling-arrow.jpg" /> --> -->
-    <table id="growingTable" cellpadding="1" cellspacing="1">
-      <tbody>
-        <tr>
-          <th id="coinGrow">Coin</th>
-          <th id="symbolGrow">Symbol</th>
-          <th id="logoGrow">Logo</th>
-          <th id="24hStatisticsGrow">24h</th>
-          <th id="currentPriceGrow">Current Price</th>
-          <th id="7dGrow">Last 7 Days</th>
-        </tr>
-      </tbody>
-    </table>
+    <div class="container-md">
+      <div class="row m-3">
+        <div class="col border rounded m-3 p-3 shadow">
+          <h3 class="mb-3">Growing</h3>
+          <div class="growing-table-wrapper">
+            <table class="table text-center" id="growingTable">
+              <tbody>
+                <tr>
+                  <th class="text-secondary" id="coinLogo">Logo</th>
+                  <th class="text-secondary" id="coinGrow">Coin</th>
+                  <th class="text-secondary" id="24hStatisticsGrow">24h Change</th>
+                  <th class="text-secondary" id="currentPriceGrow">Price</th>
+                  <th class="text-secondary" id="7dGrow">Chart</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col border rounded m-3 p-3 shadow">
+          <h3 class="mb-3">Falling</h3>
+          <div class="falling-table-wrapper">
+            <table class="table text-center" id="fallingTable">
+              <tbody>
+                <tr>
+                  <th class="text-secondary" id="coinLogo">Logo</th>
+                  <th class="text-secondary" id="coinGrow">Coin</th>
+                  <th class="text-secondary" id="24hStatisticsGrow">24h Change</th>
+                  <th class="text-secondary" id="currentPriceGrow">Price</th>
+                  <th class="text-secondary" id="7dGrow">Chart</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
-    <table id="fallingTable">
-      <tbody>
-        <tr>
-          <th id="coinFalling">Coin</th>
-          <th id="symbolFalling">Symbol</th>
-          <th id="logoFalling">Logo</th>
-          <th id="24hStatisticsFalling">24h</th>
-          <th id="currentPriceFalling">Current Price</th>
-          <th id="7dFalling">Last 7 Days</th>
-        </tr>
-      </tbody>
-    </table>
-
-
-    <table id="resultTable" cellpadding="1" cellspacing="1">
-      <tbody div="scroll">
-        <tr>
-          <th id="coin">Coin</th>
-          <th id="symbol">Symbol</th>
-          <th id="logo">Logo</th>
-          <th id="currentPrice">Current Price</th>
-          <th id="24hStatistics">24h</th>
-          <th id="volume">24h Volume</th>
-          <th id="cap">Market Cap</th>
-          <th id="7d">Last 7 Days</th>
-        </tr>
-      </tbody>
-    </table>
+      <div class="row m-3">
+        <div class="col border rounded m-3 p-3 shadow">
+          <h3 class="mb-3">Statistics</h3>
+          <div class="container mb-3 p-3 w-75">
+            <input id="search" type="text" placeholder="Search coin..." name="search">
+          </div>
+          <div class="result-table-wrapper">
+            <table class="table text-center" id="resultTable">
+              <tbody div="scroll">
+                <tr>
+                  <th class="text-secondary" id="logo">Logo</th>
+                  <th class="text-secondary" id="coin">Coin</th>
+                  <th class="text-secondary" id="currentPrice">Price</th>
+                  <th class="text-secondary" id="24hStatistics">24h Change</th>
+                  <th class="text-secondary" id="volume">24h Volume</th>
+                  <th class="text-secondary" id="cap">Market Cap</th>
+                  <th class="text-secondary" id="7d">Chart</th>
+                </tr>
+              </tbody>
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item">
+                    <button id="prevButton">Previous</button>
+                  </li>
+                  <li class="pagination">
+                    <button id="nextButton">Next</button>
+                  </li>
+                </ul>
+              </nav>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--#endregion-->
   </section>
-  <section id="simulator-page" >
-    <!-- #region Wallet -->
-    <div class="container-md mb-3">
-      <div>
-        <h2>
-          Account balance
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 border rounded-3 shadow m-2 sections">
+  <section id="simulator-page">
+    <!-- #region Simulator -->
+    <div class="container-md" style="padding-top: 100px;">
+      <div class="row m-0">
+        <div class="col-lg-4 m-2 border sections">
           <div class="row pt-3 mb-3">
             <div class="border-bottom">
               <div>
                 <p class="text-secondary">Account Balance:</p>
-                <p class="wallet-balance" style="font-size: 2rem; font-weight: 600;">0</p>
+                <p class="wallet-balance">0</p>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col p-0">
-              <h3 class="mb-3 p-3 text-secondary">My Assets</h3>
+              <h3 class="mb-3">My Assets</h3>
               <div class="assets-table-wrapper">
                 <table class="table text-center assets-table">
                   <tbody>
@@ -169,10 +188,15 @@
                   </tbody>
                 </table>
               </div>
+              <button type="button" class="btn btn-primary btn-lg my-0 simulator-btns" data-bs-toggle="modal"
+                data-bs-target="#staticBuyModal" id="buy-popup-btn">
+                Buy Crypto
+              </button>
             </div>
           </div>
         </div>
-        <div class="col-lg border rounded-3 shadow m-2 sections">
+
+        <div class="col-lg m-2 border sections">
           <div class="row text-center mb-3 p-2 border-bottom time-nav">
             <div class="col-2">
               <a class="nav-link fifteenMinutes time-links">15m</a>
@@ -193,9 +217,11 @@
               <a class="nav-link oneYear time-links">1y</a>
             </div>
           </div>
-          <canvas id="chart" class="mb-2">
+          <div class="simulator-chart-wrapper">
+            <canvas id="chart" class="mb-2">
 
-          </canvas>
+            </canvas>
+          </div>
           <div class="row text-center">
             <div class="col-4">
               <p class="text-secondary m-0">Rank</p>
@@ -229,62 +255,81 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="container-md mb-3">
-      <div>
-        <h2>Exchange</h2>
-      </div>
-      <div class="row ">
-        <div class="col-lg border rounded-3 shadow m-2 sections">
-          <form class="p-4">
-            <div class="d-flex justify-content-between">
-              <h2>Buy</h2>
-              <h2 class="text-secondary" id="coin-price"></h2>
+      <!-- Buy Modal -->
+      <div class="modal fade" id="staticBuyModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBuyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="text-center">
+                <h4 class="text-secondary" id="coin-price"></h4>
+              </div>
             </div>
-            <div class="form-group mb-3">
-              <label for="buy-input">Spend</label>
-              <input type="number" class="form-control" id="buy-input" placeholder="15.00 - 50000.00">
-              <small id="buy-validation" class="form-text text-danger"></small>
-            </div>
-            <div class="form-group mb-3">
-              <label for="buy-form-recieve">Recieve</label>
-              <input type="text" class="form-control" id="buy-form-recieve" placeholder="0" disabled>
-            </div>
-            <div class="form-group mb-3">
-              <label>Choose Crypto</label>
-              <select class="form-select buy-select">
+            <div class="modal-body">
+              <form>
+                <div class="form-group mb-3">
+                  <label for="buy-input">Spend</label>
+                  <input type="number" class="form-control" id="buy-input" step="any" placeholder="15.00 - 50000.00">
+                  <small id="buy-validation" class="form-text text-danger mb-1"></small>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="buy-form-recieve">Recieve</label>
+                  <input type="text" class="form-control" id="buy-form-recieve" placeholder="0" disabled>
+                </div>
+                <div class="form-group mb-3">
+                  <label>Choose Crypto</label>
+                  <select class="form-select buy-select">
 
-              </select>
+                  </select>
+                </div>
+                <div class="d-flex justify-content-evenly">
+                  <button type="submit" class="btn btn-primary disabled w-35 simulator-btns" data-bs-dismiss="modal"
+                    id="buy-btn">Buy</button>
+                  <button type="button" class="btn btn-secondary w-35" data-bs-dismiss="modal">Close</button>
+                </div>
+              </form>
             </div>
-            <button type="submit" class="btn btn-lg btn-primary px-5" id="buy-btn">Buy</button>
-          </form>
+          </div>
         </div>
-        <div class="col-lg border rounded-3 shadow m-2 sections">
-          <form class="p-4">
-            <h2>Sell</h2>
-            <div class="form-group mb-3">
-              <label for="sell-input">Spend</label>
-              <input type="number" class="form-control" id="sell-input" placeholder="0" step="any">
-              <small id="sell-validation" class="form-text text-danger"></small>
-            </div>
-            <div class="form-group mb-3">
-              <label for="sell-form-recieve">Recieve</label>
-              <input type="text" class="form-control" id="sell-form-recieve" placeholder="0" disabled>
-            </div>
-            <div class="form-group mb-3">
-              <label>Choose Crypto</label>
-              <select class="form-select" id="sell-select">
+      </div>
 
-              </select>
+      <!-- Sell Modal -->
+      <div class="modal fade" id="staticSellModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticSellModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <form class="p-4">
+                <div class="form-group mb-3">
+                  <label for="sell-input">Spend</label>
+                  <input type="number" class="form-control" id="sell-input" placeholder="0" step="any">
+                  <small id="sell-validation" class="form-text text-danger"></small>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="sell-form-recieve">Recieve</label>
+                  <input type="text" class="form-control" id="sell-form-recieve" placeholder="0" disabled>
+                </div>
+                <div class="form-group mb-3">
+                  <label>Choose Crypto</label>
+                  <select class="form-select" id="sell-select">
+
+                  </select>
+                </div>
+                <div class="d-flex justify-content-evenly">
+                  <button type="submit" class="btn btn-primary disabled w-35 simulator-btns" id="sell-btn"
+                    data-bs-dismiss="modal">Sell</button>
+                  <button type="button" class="btn btn-secondary w-35" data-bs-dismiss="modal">Close</button>
+                </div>
+              </form>
             </div>
-            <button type="submit" class="btn btn-lg btn-primary px-5 disabled" id="sell-btn">Sell</button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
     <!-- #endregion -->
   </section>
+
   <!-- #region Wallet -->
   <section class="information-layout" id="info-page">
     <div class="nav-bar">
