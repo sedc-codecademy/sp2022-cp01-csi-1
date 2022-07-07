@@ -45,7 +45,7 @@ if(name != null && name != ''){
   welcomeElement.innerHTML = 'Welcome  : ';
   nameElement.innerHTML = name;
   logOutBtn.style.visibility = 'visible';
-
+  $('#main-login-element').hide();
 }
 
 
@@ -56,6 +56,7 @@ logOutBtn.addEventListener('click', function(){
   localStorage.removeItem('name');
   localStorage.removeItem('email');
   logOutBtn.style.visibility = 'hidden';
+  $('#main-login-element').show();
 })
 
 
