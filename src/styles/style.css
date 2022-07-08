@@ -651,41 +651,17 @@ body {
   padding: 10px 240px 30px 320px;
   position: relative;
 }
-
-.content-homePage h1 {
-  font-size: 88px;
-  margin-bottom: 12px;
-
+#homepage-sideimage{
+  width: 35%;
+  margin-left: 70%;
+  margin-top: -20%;
+  /* display: inline; */
 }
 
-.content-homePage h1 span {
-  color: #ff960b;
+.content-homePage{
+  display: inline;
 }
-
-.content-homePage p {
-  line-height: 22px;
-  font-size: 18px;
-
-}
-
-.content-homePage .btn {
-  display: inline-block;
-  margin-top: 20px;
-  background: #ff960b;
-  text-decoration: none;
-  padding: 15px 30px;
-  border-radius: 30px;
-}
-
-.cards {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100vh;
-
-}
-
-.singleCard {
+.singleCard{
   display: inline-block;
   margin-right: 120px;
   margin-top: 20px;
@@ -787,42 +763,32 @@ body {
   pointer-events: auto;
   opacity: 1;
 }
+.information-layout{
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    left: 0%;
 
-.information-layout {
-
-  display: inline-block;
-  position: relative;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100vh;
-  left: 0%;
-
-  background-position: center;
-  overflow: hidden;
-  margin-top: 0px;
-
-
+    background-position: center;
+    margin-top: 0px;
 }
 
 .information-layout img {
   border-radius: 20px;
 }
 
-.information-text {
-  width: 50%;
-  height: 100vh;
-  left: 25%;
-  position: absolute;
-  margin: 10px;
-
-  -ms-overflow-style: none;
-  /* for Internet Explorer, Edge */
-  scrollbar-width: none;
-  /* for Firefox */
-  overflow-y: scroll;
-  bottom: 3%;
-  top: 0.5%;
+.information-text{
+    width: 70%;
+    height: 100vh;
+    left: 17%;
+    position: absolute;
+    margin: 10px;
+    
+    bottom: 3%;
+    top: 0.5%;
 
 
 }
