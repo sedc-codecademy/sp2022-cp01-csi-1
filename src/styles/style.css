@@ -513,7 +513,16 @@ body{
   height: 100vh;
   
 }
+#homepage-sideimage{
+  width: 35%;
+  margin-left: 70%;
+  margin-top: -20%;
+  /* display: inline; */
+}
 
+.content-homePage{
+  display: inline;
+}
 .singleCard{
   display: inline-block;
   margin-right: 120px;
@@ -609,7 +618,6 @@ body{
   opacity: 1;
 }
 .information-layout{
-
     display: inline-block;
     position: relative;
     padding: 0;
@@ -620,8 +628,6 @@ body{
 
     background-position: center;
     margin-top: 0px;
-    
-
 }
 .information-layout img{
   border-radius: 20px;
