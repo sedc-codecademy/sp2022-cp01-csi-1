@@ -78,6 +78,7 @@
     </div>
     <!-- #endregion -->
   </nav>
+
   <section id="home-page" >
       
       <div class="content-homePage">
@@ -96,6 +97,7 @@
      </div>
      
   </section>
+
   <section id="statistics-page">
     <!--#region Statistics-->
     <div class="container-md">
@@ -170,22 +172,23 @@
     </div>
     <!--#endregion-->
   </section>
+
   <section id="simulator-page">
     <!-- #region Simulator -->
     <div class="container-md" style="padding-top: 100px;">
       <div class="row m-0">
-        <div class="col-lg-4 m-2 border rounded-3 sections">
+        <div class="col-lg-4 m-2 rounded sections">
           <div class="row pt-3 mb-3">
-            <div class="border-bottom">
+            <div>
               <div>
-                <p class="text-secondary">Account Balance:</p>
-                <p class="wallet-balance">0</p>
+                <p style="color: #808991;">Account Balance:</p>
+                <p class="wallet-balance" style="color: white;">0</p>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col p-0">
-              <h3 class="mb-3">My Assets</h3>
+              <h3 class="mb-3" id="assets-header">My Assets</h3>
               <div class="assets-table-wrapper">
                 <table class="table text-center assets-table">
                   <tbody>
@@ -193,7 +196,7 @@
                   </tbody>
                 </table>
               </div>
-              <button type="button" class="btn btn-primary btn-lg my-0 simulator-btns" data-bs-toggle="modal"
+              <button type="button" class="simulator-btns" data-bs-toggle="modal"
                 data-bs-target="#staticBuyModal" id="buy-popup-btn">
                 Buy Crypto
               </button>
@@ -201,10 +204,10 @@
           </div>
         </div>
 
-        <div class="col-lg m-2 border rounded-3 sections">
+        <div class="col-lg m-2 rounded sections">
           <div class="d-flex flex-column justify-content-between statistics-container">
             <div class="">
-              <div class="row text-center mb-3 p-2 border-bottom time-nav">
+              <div class="row text-center mb-3 p-2 time-nav">
                 <div class="col-2">
                   <a class="nav-link fifteenMinutes time-links">15m</a>
                 </div>
@@ -235,32 +238,32 @@
             <div class="">
               <div class="row text-center">
                 <div class="col-4">
-                  <p class="text-secondary m-0">Rank</p>
-                  <p class="coin-rank">0</p>
+                  <p class="text-white m-0">Rank</p>
+                  <p class="coin-rank coin-stats">0</p>
                 </div>
                 <div class="col-4">
-                  <p class="text-secondary m-0">Price</p>
-                  <p class="current-price">0$</p>
+                  <p class="text-white m-0">Price</p>
+                  <p class="current-price coin-stats">0$</p>
                 </div>
                 <div class="col-4">
-                  <p class="text-secondary m-0">24 Change</p>
-                  <p class="price-change">0%</p>
+                  <p class="text-white m-0">24 Change</p>
+                  <p class="price-change coin-stats">0%</p>
                 </div>
                 <div class="col-4">
-                  <p class="text-secondary m-0">24h Low</p>
-                  <p class="24-low">0$</p>
+                  <p class="text-white m-0">24h Low</p>
+                  <p class="24-low coin-stats">0$</p>
                 </div>
                 <div class="col-4">
-                  <p class="text-secondary m-0">24h High</p>
-                  <p class="24-high">0$</p>
+                  <p class="text-white m-0">24h High</p>
+                  <p class="24-high coin-stats">0$</p>
                 </div>
                 <div class="col-4">
-                  <p class="text-secondary m-0">Market cap</p>
-                  <p class="market-cap">0</p>
+                  <p class="text-white m-0">Market cap</p>
+                  <p class="market-cap coin-stats">0</p>
                 </div>
               </div>
               <div class="row p-3">
-                <select class="form-select statistics-select" aria-label="Default select example">
+                <select id="stats-select" class="form-select statistics-select" aria-label="Default select example">
 
                 </select>
               </div>
@@ -297,9 +300,9 @@
                   </select>
                 </div>
                 <div class="d-flex justify-content-evenly">
-                  <button type="submit" class="btn btn-primary disabled w-35 simulator-btns" data-bs-dismiss="modal"
-                    id="buy-btn">Buy</button>
-                  <button type="button" class="btn btn-secondary w-35" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="disabled w-35 simulator-btns" data-bs-dismiss="modal"
+                    id="buy-btn">Buy Crypto</button>
+                  <button type="button" class="close-modal-btn" data-bs-dismiss="modal">Close</button>
                 </div>
               </form>
             </div>
@@ -330,9 +333,9 @@
                   </select>
                 </div>
                 <div class="d-flex justify-content-evenly">
-                  <button type="submit" class="btn btn-primary disabled w-35 simulator-btns" id="sell-btn"
+                  <button type="submit" class="disabled w-35 simulator-btns" id="sell-btn"
                     data-bs-dismiss="modal">Sell</button>
-                  <button type="button" class="btn btn-secondary w-35" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="close-modal-btn" data-bs-dismiss="modal">Close</button>
                 </div>
               </form>
             </div>

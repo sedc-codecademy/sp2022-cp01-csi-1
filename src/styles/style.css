@@ -1,6 +1,7 @@
-/* * {
-    font-family: 'Nunito', sans-serif;
-} */
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
 body {
   /* background-image: url("https://holacrypto.com/wp-content/uploads/2020/01/altnews-twitter-back.jpg"); */
   /* background-image: url("/assets/bg2.jpg"); */
@@ -368,6 +369,7 @@ body {
 .assets-table>thead>tr>td,
 .assets-table>thead>tr>th {
   border: 0;
+  color: white;
 }
 
 .hide {
@@ -375,16 +377,25 @@ body {
 }
 
 .time-links {
-  color: #6C757D;
+  color: white;
 }
 
 .active {
-  color: rgb(14, 110, 253);
+  color: orange;
 }
 
 .time-links:hover {
-  color: white;
+  color: orange;
   cursor: pointer;
+}
+
+.coin-stats {
+  color: white;
+}
+
+#assets-header {
+  color: white;
+  text-align: left;
 }
 
 #buy-input::-webkit-outer-spin-button,
@@ -401,21 +412,78 @@ body {
 }
 
 #buy-popup-btn {
+  border: none;
   width: 100%;
   height: 50px;
+  columns: white;
+  background-color: orange;
+  transition: 0.4s;
+}
+
+#buy-popup-btn:hover {
+  background-color: rgb(187, 121, 0);
 }
 
 .simulator-btns {
   border: none !important;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: orange;
+  margin: 0;
+  transition: 0.4s;
+  border-radius: 0px;
+  height: 50px;
+}
+
+.close-modal-btn {
+  background-color: gray;
+  border: none !important;
+  border-radius: 0 !important;
+  height: 50px;
+  margin: 0;
+  transition: 0.4s;
+}
+
+.close-modal-btn:hover {
+  background-color: rgb(160, 159, 159);
+}
+
+.simulator-btns:hover {
+  background-color: rgb(187, 121, 0);
 }
 
 .statistics-container {
   height: 100%;
 }
 
-/* #endregion */
+.sections {
+  background-color: #07071A !important;
+  border-radius: 5px !important;
+}
+
+#stats-select {
+  font-size: 24px;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: white 1px solid;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  color: white;
+}
+
+#stats-select option {
+  margin: 40px;
+  background-color: #07071A;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  border: none;
+}
+
 
 /* #endregion */
 
@@ -503,7 +571,7 @@ body {
 
 #bitcoin-pizza-fact {
   border-radius: 30px;
-  background-color: rgba(15, 15, 216, 0.215);
+  /* background-color: rgba(15, 15, 216, 0.215); */
   margin: auto;
   width: 100%;
   padding: 10px;
@@ -511,7 +579,7 @@ body {
 
 #etherium-facts {
   border-radius: 30px;
-  background-color: rgba(15, 15, 216, 0.215);
+  /* background-color: rgba(15, 15, 216, 0.215); */
   margin: auto;
   width: 100%;
   padding: 10px;
@@ -519,7 +587,7 @@ body {
 
 #crypto-mining-acts {
   border-radius: 30px;
-  background-color: rgba(15, 15, 216, 0.215);
+  /* background-color: rgba(15, 15, 216, 0.215); */
   margin: auto;
   width: 100%;
   padding: 10px;
@@ -527,7 +595,7 @@ body {
 
 .btn-for-information {
   border-radius: 20px;
-  background-color: rgba(15, 15, 216, 0.215);
+  /* background-color: rgba(15, 15, 216, 0.215); */
 }
 
 .content-homePage h1 {
@@ -624,7 +692,6 @@ body {
   padding-top: 15px;
   width: 180px;
   height: 170px;
-  border: 2px solid rgb(60, 10, 100);
   border-radius: 20px;
   text-align: center;
 }
@@ -876,15 +943,12 @@ h3 {
 /* #endregion */
 
 /*#region LogIn and SignUp */
-
-
 #login-page {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Nunito', sans-serif;
 }
 
 input,
@@ -948,7 +1012,6 @@ label span {
   font-size: 16px;
   padding-bottom: 5px;
   border-bottom: 1px solid rgba(109, 93, 93, 0.4);
-  font-family: 'Nunito', sans-serif;
 }
 
 .form_control.success input {
@@ -985,7 +1048,7 @@ button {
   margin: 5px auto;
   width: 200px;
   height: 10%;
-  border-radius: 30px;
+  border-radius: 3px;
   color: #fff;
   font-size: 15px;
   cursor: pointer;
@@ -996,7 +1059,6 @@ button {
   margin-bottom: 5%;
   text-transform: uppercase;
   font-weight: 600;
-  font-family: 'Nunito', sans-serif;
   background: lightslategray;
 }
 

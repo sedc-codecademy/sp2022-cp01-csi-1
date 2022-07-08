@@ -54,7 +54,7 @@ const populateAssetsTable = (btc) => {
                     </td>
                     <td>
                         <button type="button" class="btn btn-primary sell-popup-btns simulator-btns" data-bs-toggle="modal"
-                        data-bs-target="#staticSellModal" style="width: 55px;">
+                        data-bs-target="#staticSellModal" style="width: 70px;">
                             Sell
                         </button>
                     </td>
@@ -68,7 +68,7 @@ const populateAssetsTable = (btc) => {
     }
     walletBalance = walletEstimatedValue / btcPrice;
     // Calcualte and print wallet account balance
-    $('.wallet-balance').html(`<p style="font-size: 1.6rem;">${walletBalance.toFixed(5)} <span class="text-secondary" style="font-size: 1rem; font-weight: 600">BTC</span> ≈ ${formatCurrency(walletEstimatedValue)}</p>`);
+    $('.wallet-balance').html(`<p style="font-size: 1.6rem;">${walletBalance.toFixed(5)} <span style="font-size: 1rem; font-weight: 600;">BTC</span> ≈ ${formatCurrency(walletEstimatedValue)}</p>`);
 }
 
 fetchBtcValue();
@@ -116,9 +116,7 @@ const loadStatisticsData = () => {
 
 // Setting graph chart with Chart.js using data from coingecko api
 const createGraph = (data, coinName) => {
-    console.log($("#chart-one")[0]);
-    console.log($("#chart-one")[0].getContext('2d'));
-    const btcCanvas = $("#chart-one")[0].getContext('2d');
+    const btcCanvas = $("#simulator-chart")[0].getContext('2d');
     // Chart needs to be destroyed to present a new one
     let chartStatus = Chart.getChart(btcCanvas);
     if (chartStatus != undefined) {
@@ -142,8 +140,8 @@ const createGraph = (data, coinName) => {
         datasets: [{
             label: capitalizeWord(coinName),
             borderWidth: 1.5,
-            backgroundColor: 'rgb(27, 77, 137, 0.4)',
-            borderColor: '#1b4d89',
+            backgroundColor: 'transparent',
+            borderColor: '#FFA500',
             fill: true,
             data: btcPrices,
         }]
