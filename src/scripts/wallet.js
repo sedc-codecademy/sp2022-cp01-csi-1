@@ -116,7 +116,9 @@ const loadStatisticsData = () => {
 
 // Setting graph chart with Chart.js using data from coingecko api
 const createGraph = (data, coinName) => {
-    const btcCanvas = $("#simulator-chart")[0].getContext('2d');
+    console.log($("#chart-one")[0]);
+    console.log($("#chart-one")[0].getContext('2d'));
+    const btcCanvas = $("#chart-one")[0].getContext('2d');
     // Chart needs to be destroyed to present a new one
     let chartStatus = Chart.getChart(btcCanvas);
     if (chartStatus != undefined) {
@@ -377,6 +379,13 @@ $('#buy-btn').click(() => {
             loadStatisticsData();
             populateSellFormSelect();
             sellFormData();
+            let coinsDbInformation = localStorage.getItem("coinsDb");
+            let nameOfLogedUser = localStorage.getItem("name");
+            if(nameOfLogedUser != " " && coinsDbInformation != ""){
+                let cryptoWalletValueUser = JSON.parse(localStorage.getItem("cryptoWalletOfUser")) || [];
+		cryptoWalletValueUser.push({nameOfLogedUser,coinsDbInformation});
+		localStorage.setItem('cryptoWalletOfUser',JSON.stringify(cryptoWalletValueUser));
+            }
         })
         .catch(err => console.error(err));
 

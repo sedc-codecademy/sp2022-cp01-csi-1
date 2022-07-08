@@ -1,14 +1,14 @@
-* {
-  font-family: 'Nunito', sans-serif;
-}
-
+/* * {
+    font-family: 'Nunito', sans-serif;
+} */
 body {
   /* background-image: url("https://holacrypto.com/wp-content/uploads/2020/01/altnews-twitter-back.jpg"); */
+  /* background-image: url("/assets/bg2.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  /* background-color: #11101D; */
+  background-color: #322f50;
 }
 
 /* width */
@@ -31,7 +31,7 @@ body {
   background: -webkit-linear-gradient(left, white, rgb(6, 6, 32));
 }
 
-/* #region Nav Bar*/
+/*#region Nav Bar*/
 .sidebar {
   border-radius: border-box;
   position: fixed;
@@ -117,6 +117,7 @@ body {
 }
 
 .sidebar .nav-list {
+  padding-left: 2%;
   margin-top: 20px;
   height: 100%;
 }
@@ -327,6 +328,7 @@ body {
     display: none;
   }
 }
+
 /* #endregion*/
 
 /* #region Simulator */
@@ -415,7 +417,9 @@ body {
 
 /* #endregion */
 
-/* #region Statistics */
+/* #endregion */
+
+/* #region Statistics Page */
 #statistics-page {
   /* background-image: url("/assets/bg1.jpg"); */
   background-position: center;
@@ -462,16 +466,32 @@ body {
   height: 30px;
   margin-left: 1100px;
 }
-/* #endregion */
 
-/* #region Home page css*/
+#growingTable,
+#fallingTable,
+#resultTable {
+  color: #FFF
+}
+
+#search {
+  width: 100%;
+  border-style: groove;
+  color: #FFF;
+
+}
+
+
+
+/*#endregion*/
+
+/*#region Home page css*/
 #home-page {
   width: 100%;
   height: 100%;
   height: 100vh;
   background-position: center;
   background-size: cover;
-  padding: 10px 240px 30px 320px;
+  padding: 10px 240px 30px 200px;
   color: #fff;
   position: relative;
 }
@@ -479,8 +499,18 @@ body {
 .content-homePage h1 {
   font-size: 88px;
   margin-bottom: 12px;
-  color: #ff960b;
+  color: #fff;
 
+}
+
+.content-homePage h1 span {
+  color: #fff;
+}
+
+.content-homePage p {
+  line-height: 22px;
+  font-size: 18px;
+  color: #fff;
 }
 
 .content-homePage h1 span {
@@ -578,6 +608,14 @@ body {
   margin-left: 20%;
 }
 
+#about-us,
+#contact-us,
+#privacy {
+  margin-top: 1%;
+  margin-bottom: 3%;
+  color: #FFF;
+}
+
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
 
   .content-homePage h1 {
@@ -625,120 +663,88 @@ body {
   .singleCard {
     margin-left: 10px;
   }
-
 }
-/* #endregion */
 
-/* #region Information  page css*/
-#info-page {
-  width: 100%;
-  height: 100vh;
+/*#endregion*/
+
+/*#region Information  page css*/
+.to-top {
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Nunito', sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s;
+}
 
+.to-top.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
 }
 
 .information-layout {
+
   display: inline-block;
   position: relative;
-  padding: 10px;
-  margin: 10px;
-  width: 83%;
-  height: 90vh;
-  background-color: transparent;
-  left: 15%;
-  /* background-color: white; */
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  left: 0%;
+
   background-position: center;
   overflow: hidden;
-  margin-left: -5%;
-  /* margin-top: -%; */
-  width: 100%;
-  height: 100%;
+  margin-top: 0px;
+
 
 }
 
-.nav-bar {
-  top: 12%;
-  width: 330px;
-  height: 100vh;
-  left: 5%;
-
-  position: absolute;
+.information-layout img {
+  border-radius: 20px;
 }
 
 .information-text {
-  width: 44%;
-  height: 90vh;
-  right: 26%;
+  width: 50%;
+  height: 100vh;
+  left: 25%;
   position: absolute;
   margin: 10px;
+
   -ms-overflow-style: none;
   /* for Internet Explorer, Edge */
   scrollbar-width: none;
   /* for Firefox */
   overflow-y: scroll;
   bottom: 3%;
-  top: 6%;
-}
+  top: 0.5%;
 
-.nav-bar {
-  top: 18%;
-  width: 330px;
-  height: 100vh;
+
 }
 
 .information-text h1 {
+
   margin-top: 40px;
+  color: orange
 }
 
-.information-text::-webkit-scrollbar {
-  display: none;
-}
-
+/* .information-text::-webkit-scrollbar{
+    display: none;
+} */
 h3 {
-  color: white;
+  color: orange;
   text-align: center;
   margin: 15px;
   font-size: 25px;
-}
 
-.information-text {
-  width: 44%;
-  height: 100vh;
-  right: 26%;
-  position: absolute;
-  margin: 10px;
-  -ms-overflow-style: none;
-  /* for Internet Explorer, Edge */
-  scrollbar-width: none;
-  /* for Firefox */
-  overflow-y: scroll;
-  bottom: 3%;
-  top: 5%;
-}
-
-.content {
-  margin-left: 5px;
-  color: white;
-  font-size: 20px;
-  margin: 0;
-  top: 2%;
-}
-
-.content a {
-  text-decoration: none;
-  color: white;
-}
-
-.content a:hover {
-  color: #ff960b;
-  font-size: 21px;
 }
 
 .information-text h1 {
-  color: white;
+  color: orange;
   font-size: 30px;
   margin-bottom: 20px;
 }
@@ -747,50 +753,44 @@ h3 {
   color: white;
   font-size: 24px;
   line-height: 40px;
-
-
 }
 
-.bi {
-  display: none;
-  width: 100%;
-  height: 430px;
-  background-color: rgb(169, 168, 168);
-  margin: 0px;
-  justify-content: center;
+.information-text img {
+  width: calc(100% - 80px);
+  height: auto;
   text-align: center;
-  cursor: pointer;
+  justify-content: center;
 
 }
 
-.content a {
-  font-size: 22px;
+.information-text img:first-of-type {
+  width: calc(100% - 10px);
+  height: auto;
 }
 
-.nav-bar {
-  top: 0%;
-  right: 0%;
-  width: 100%;
-  height: 480px;
-  position: relative;
-}
 
-.nav-bar h3 {
-  background-color: grey;
-  margin: 0px;
-  top: 2;
-  padding: 15px;
-  position: relative;
-}
+@media (min-device-width: 375px) and (max-device-width: 812px) {
 
-.bi {
-  display: block;
-  position: absolute;
-  right: 5%;
-  z-index: 1;
-  top: 2%;
-  width: 23px;
-  height: 23px;
+  .information-layout {
+    width: 100%;
+    left: 2%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .information-text {
+    width: 70%;
+    top: 2;
+    left: 20%;
+    margin-bottom: 100px;
+  }
+
+  .information-text p {
+    font-size: 20px;
+    margin: 0;
+    top: 2%;
+  }
+
 }
 
 @media (min-device-width: 813px) and (max-device-width: 1180px) {
@@ -800,10 +800,50 @@ h3 {
     margin: 0;
     padding: 0;
   }
+
+  .information-text {
+    width: 65%;
+    top: 2;
+    left: 20%;
+    margin-bottom: 100px;
+  }
+
+  .information-text p {
+    font-size: 22px;
+    margin: 0;
+    top: 2%;
+  }
+
 }
+
+@media (min-device-width: 1181px) and (max-device-width: 1389px) {
+  .information-layout {
+    width: 100%;
+    left: 0%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .information-text {
+    width: 65%;
+    top: 6.5%;
+    left: 20%;
+    margin-bottom: 100px;
+  }
+
+  .information-text p {
+    font-size: 23px;
+    margin: 0;
+    top: 2%;
+  }
+
+}
+
 /* #endregion */
 
-/* #region LogIn and SignUp */
+/*#region LogIn and SignUp */
+
+
 #login-page {
   width: 100%;
   height: 100vh;
@@ -823,7 +863,7 @@ button {
 .cont {
   overflow: hidden;
   position: absolute;
-  width: 80%;
+  width: 81%;
   height: 90%;
   background: whitesmoke;
   height: 95%;
@@ -845,15 +885,17 @@ button {
 }
 
 .form.sign-up {
+  text-align: center;
   width: 100%;
 }
 
-h2 {
+.h2-login {
   width: 100%;
   font-size: 30px;
 }
 
-label {
+.login-labels,
+.form_control {
   display: block;
   margin: 20px auto 0;
 }
@@ -865,7 +907,7 @@ label span {
   text-transform: uppercase;
 }
 
-input {
+.input-login {
   display: block;
   width: 100%;
   margin-top: 5px;
@@ -1151,4 +1193,5 @@ button {
     width: 80%;
   }
 }
+
 /* #endregion */
