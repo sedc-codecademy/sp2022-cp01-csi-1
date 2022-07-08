@@ -638,8 +638,8 @@ body{
     height: 100vh;
     left: 17%;
     position: absolute;
-    margin: 10px; 
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    margin: 10px;
+    
     bottom: 3%;
     top: 0.5%;
 
