@@ -513,7 +513,16 @@ body{
   height: 100vh;
   
 }
+#homepage-sideimage{
+  width: 35%;
+  margin-left: 70%;
+  margin-top: -20%;
+  /* display: inline; */
+}
 
+.content-homePage{
+  display: inline;
+}
 .singleCard{
   display: inline-block;
   margin-right: 120px;
