@@ -15,6 +15,9 @@ let submitButton = document.getElementById('sub');
 let signInEmail = document.getElementById('emailSignIn');
 let signInPassword = document.getElementById('passwordSignIn');
 let signInButton =  document.getElementById('signInButton');
+let mainLogInElement = $("#main-login-element");
+
+
 
 //Labels and Messages
 let labels = document.getElementsByClassName('form_control');
@@ -54,13 +57,12 @@ function SignIn(email,password){
 	let formData = JSON.parse(localStorage.getItem('formData')) || [];
     
 	if(formData.some(data => data.emails == email && data.pass == password)){
-		
-		alert("Success");
 		let current_user=formData.filter((v)=>{return v.emails==email && v.pass==password})[0];
 		console.log(current_user);
 		localStorage.setItem('name',current_user.name);
 		localStorage.setItem('email',current_user.emails);
 		window.location.href= "index.html";
+		
 	}
 	else{
 		alert('There is no such user');
@@ -195,3 +197,5 @@ signInButton.addEventListener('click', function(){
 
 	
 })
+let el =  JSON.parse(localStorage.getItem("formData")).length;
+console.log(el);

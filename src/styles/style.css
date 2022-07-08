@@ -1,8 +1,9 @@
-* {
+/* * {
     font-family: 'Nunito', sans-serif;
-}
+} */
 body{
-  background-image: url("https://holacrypto.com/wp-content/uploads/2020/01/altnews-twitter-back.jpg");
+  /* background-image: url("https://holacrypto.com/wp-content/uploads/2020/01/altnews-twitter-back.jpg"); */
+  background-image: url("/bg2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -29,9 +30,9 @@ body{
     background: -webkit-linear-gradient(left,white,rgb(6,6,32));
 }
 
-/*region Nav Bar*/
+/*#region Nav Bar*/
 .sidebar{
-    border-radius: border-box;
+  border-radius: border-box;
   position: fixed;
   left: 0;
   top: 0;
@@ -103,6 +104,7 @@ body{
   line-height: 60px;
 }
 .sidebar .nav-list{
+  padding-left: 2%;
   margin-top: 20px;
   height: 100%;
 }
@@ -289,221 +291,141 @@ body{
 /* #endregion*/
 
 /* #region Wallet */
+/* #region Simulator */
+@media (max-width: 720px) {
+  .sections {
+    box-shadow: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 
-#simulator-page{
-  width: 100%;
-  height: 100%;
-  color: white;
+  body {
+    padding: 0;
+  }
 }
 
+.row {
+  background-image: url("/assets/bg1.jpg");
+  background-size: cover;
+  background-position: bottom;
 
-@media (max-width: 720px) {
-    .sections {
-        box-shadow: none !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
+}
 
-    body {
-        padding: 0;
-    }
+.container-md {
+  background-image: url("/assets/bg1.jpg");
+  background-size: cover;
+  background-position: bottom;
 }
 
 .assets-table-wrapper {
-    margin: 0 auto;
-    overflow-y: auto;
-    height: 450px;
-    color: white;
+  margin: 0 auto;
+  overflow-y: auto;
+  height: 500px;
 }
 
 .assets-table>tbody>tr>td,
 .assets-table>tbody>tr>th,
 .assets-table>thead>tr>td,
 .assets-table>thead>tr>th {
-    border: 0;
-    color: white;
+  border: 0;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .time-links {
-    color: #6C757D;
+  color: #6C757D;
 }
 
 .active {
-    color: rgb(14, 110, 253);
+  color: rgb(14, 110, 253);
 }
 
 .time-links:hover {
-    color: rgb(14, 110, 253);
-    cursor: pointer;
+  color: white;
+  cursor: pointer;
+}
+
+#buy-input::-webkit-outer-spin-button,
+#buy-input::-webkit-inner-spin-button,
+#sell-input::-webkit-outer-spin-button,
+#sell-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#buy-input,
+#sell-input {
+  -moz-appearance: textfield;
+}
+
+#buy-popup-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 0 !important;
+}
+
+.simulator-btns {
+  border: none !important;
+  border-radius: 0 !important;
+  color: black;
+  background-color:white;
 }
 
 /* #endregion */
 
-/*#region statistics css*/
-#statistics-page{
-  width: 100%;
-  height: 100vh;
-  margin-left: 10%;
-}
-#resultTable {
-    margin-top: 50px;
-    margin-bottom: 40px;
-    margin-left: 10px;
-    border-radius: 15px 50px 30px 5px;
-    border-spacing: 1px;
-    text-align: center;
-    padding: 5px;
-    font: 24px/36px sans-serif;
-    width: 1100px;
+/* #endregion */
+
+/* #region Statistics Page */
+#statistics-page {
+  /* background-image: url("/assets/bg1.jpg"); */
+  background-position: center;
+  background-size: cover;
+  color: white;
 }
 
-#resultTable tbody {
-    height: 600px;
-    display: block;
-    border: none;
-    padding: 5px;
-    width: 100%;
-    overflow: scroll;
-}
-
-#resultTable th {
-    color: #ff960b;
-    text-align: center;
-    font-size: 30px;
-    border-bottom: 1px solid white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 1px 1px 1px 1px;
-
-
-}
-
-#resultTable td {
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    border-bottom: 1px solid white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 2px 2px 2px 2px;
-}
-
-#growingTable {
-    margin-top: 10px;
-    margin-bottom: 40px;
-    margin-left: 10px;
-    border-radius: 15px 10px 12px 5px;
-    /* border-spacing: 1px; */
-    text-align: center;
-    padding: 2px;
-    font: 24px/36px sans-serif;
-    width: 40px;
-}
-
-#growingTable tbody {
-    height: 400px;
-    display: block;
-    border: none;
-    padding: 2px;
-    width: 620px;
-    overflow: scroll;
-}
-
-#growingTable th {
-    color: #ff960b;
-    text-align: center;
-    font-size: 16px;
-    border-bottom: 1px solid white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 1px 1px 1px 1px;
-}
-
-#growingTable td {
-    color: white;
-    text-align: center;
-    font-size: 17px;
-    border-bottom: 1px solid white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 1px 1px 1px 1px;
-
+.growing-table-wrapper,
+.falling-table-wrapper,
+.result-table-wrapper {
+  margin: 0 auto;
+  overflow-y: auto;
+  height: 450px;
 }
 
 #heading {
-    color: #ff960b;
-    margin-left: 200px;
-    margin-right: 980px;
-    margin-bottom: -20px;
-    padding: 1px 1px 1px 1px;
-    text-align: center;
-    background-color: transparent;
-}
-
-#fallingTable {
-    margin-top: -440px;
-    margin-bottom: 40px;
-    margin-left: 700px;
-    border-radius: 15px 10px 12px 5px;
-    border-spacing: 1px;
-    text-align: center;
-    padding: 2px;
-    font: 24px/36px sans-serif;
-    width: 40px;
-}
-
-#fallingTable tbody {
-    height: 400px;
-    display: block;
-    border: none;
-    padding: 2px;
-    width: 620px;
-    overflow: scroll;
-}
-
-#fallingTable th {
-    color: #ff960b;
-    text-align: center;
-    font-size: 16px;
-    border-bottom: 1px solid white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 1px 1px 1px 1px;
-}
-
-#fallingTable td {
-    color: white;
-    text-align: center;
-    font-size: 18px;
-    border-bottom: 1px solid white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 1px 1px 1px 1px;
-
+  margin-left: 200px;
+  margin-right: 980px;
+  margin-bottom: -20px;
+  padding: 1px 1px 1px 1px;
+  text-align: center;
+  background-color: transparent;
 }
 
 #heading2 {
-    color: #ff960b;
-    margin-left: 800px;
-    margin-right: 100px;
-    margin-top: -44px;
-    margin-bottom: -19px;
-    padding: 1px 1px 1px 1px;
-    text-align: center;
-    background-color: transparent;
+  margin-right: 100px;
+  margin-top: -44px;
+  margin-bottom: -19px;
+  padding: 1px 1px 1px 1px;
+  text-align: center;
+  background-color: transparent;
 }
 
 #img1 {
-    width: 60px;
-    height: 30px;
-    margin-left: 370px;
-    margin-bottom: 8px;
+  width: 60px;
+  height: 30px;
+  margin-left: 370px;
+  margin-bottom: 8px;
 
 }
 
 #img2 {
-    width: 60px;
-    height: 30px;
-    margin-left: 1100px;
+  width: 60px;
+  height: 30px;
+  margin-left: 1100px;
 }
+
+
 
 /*#endregion*/
 
@@ -514,7 +436,7 @@ body{
     height: 100vh;
     background-position: center;
     background-size: cover;
-    padding: 10px 240px 30px 320px;
+    padding: 10px 240px 30px 200px;
     color: #fff;
     position: relative;
 }
@@ -522,16 +444,16 @@ body{
 .content-homePage h1{
     font-size: 88px;
     margin-bottom: 12px;
-    color: #ff960b;
+    color: #fff;
 
 }
 .content-homePage h1 span{
-    color: #ff960b;
+    color: #fff;
 }
 .content-homePage p{
     line-height: 22px;
     font-size: 18px;
-    color: #ff960b;
+    color: #fff;
 
 }
 .paragraph{
@@ -571,6 +493,18 @@ body{
   font-size:20px;
   padding-top: 0;
 }
+#contact-us,#about-us,#privacy{
+  display: inline;
+  margin-left: 20%;
+}
+#about-us,
+#contact-us,
+#privacy{
+  margin-top: 1%;
+  margin-bottom: 3%;
+  color: #FFF;
+}
+
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
@@ -615,8 +549,8 @@ body{
   .singleCard{
     margin-left: 10px;
   }
-
 }
+<<<<<<< HEAD
 @media only screen 
    and(min-device-width: 1026px)
    and (max-device-width: 1471px)
@@ -635,6 +569,9 @@ body{
       
 
   }
+=======
+
+>>>>>>> develop
 /*#endregion*/
 
 /*#region Information  page css*/
@@ -667,8 +604,15 @@ body{
     background-image: url("/images/bg1.jpg");
     background-position: center;
     overflow: hidden;
+<<<<<<< HEAD
     margin-top: 0px;
     
+=======
+    margin-left: -5%;
+    /* margin-top: -%; */
+    width: 100%;
+    height: 100%;
+>>>>>>> develop
 
 }
 .information-layout img{
@@ -793,9 +737,9 @@ img:first-of-type{
         }
         
     }
+/* #endregion */
 
-
-/*LogIn and SignUp */
+/*#region LogIn and SignUp */
 
 
 #login-page{
@@ -816,7 +760,7 @@ input, button{
 .cont{
   overflow: hidden;
   position: absolute;
-  width: 80%;
+  width: 81%;
   height: 90%;
   background: whitesmoke;
   height: 95%;
@@ -840,13 +784,13 @@ input, button{
   width: 100%;
 }
 
-h2{
+.h2-login{
   width: 100%;
   font-size: 30px;
   text-align: center;
 }
 
-label{
+.login-labels, .form_control{
   display: block;
   width: 70%;
   margin: 20px auto 0;
@@ -860,7 +804,7 @@ label span{
   text-transform: uppercase;
 }
 
-input{
+.input-login{
   display: block;
   width: 100%;
   margin-top: 5px;
@@ -1139,3 +1083,4 @@ button{
     width: 80%;
   }
 }
+/* #endregion */
