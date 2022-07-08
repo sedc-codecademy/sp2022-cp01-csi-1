@@ -65,7 +65,6 @@ logOutBtn.addEventListener('click', function(){
   localStorage.removeItem("coinsDb");
   logOutBtn.style.visibility = 'hidden';
   $('#main-login-element').show();
-
 })
 
 

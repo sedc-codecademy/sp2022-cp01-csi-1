@@ -709,7 +709,7 @@ h3{
         }
         
     }
-
+/* #endregion */
 
 /*#region LogIn and SignUp */
 
@@ -753,6 +753,7 @@ input, button{
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
 }
 .form.sign-up{
+  text-align: center;
   width: 100%;
 }
 
