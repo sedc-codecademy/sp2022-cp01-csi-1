@@ -1,6 +1,6 @@
-/* * {
+* {
     font-family: 'Nunito', sans-serif;
-} */
+}
 body{
   /* background-image: url("https://holacrypto.com/wp-content/uploads/2020/01/altnews-twitter-back.jpg"); */
   /* background-image: url("/assets/bg2.jpg"); */
@@ -383,6 +383,7 @@ body{
   background-position: center;
   background-size: cover;
   color: white;
+  /* background-color: rgba(15, 15, 216, 0.215); */
 }
 
 .growing-table-wrapper,
@@ -391,6 +392,7 @@ body{
   margin: 0 auto;
   overflow-y: auto;
   height: 450px;
+  
 }
 
 #heading {
@@ -682,6 +684,10 @@ h3{
 .information-text img:first-of-type{
   width: calc(100% - 10px);
   height: auto;
+}
+#back-to-the-top-btn{
+  color: white;
+  background-color: #ff960b;
 }
 
 

@@ -278,6 +278,8 @@ function fallingCoins(data) {
   }
 }
 //#endregion
+//Show information about one coin
+
 
 //#region Searchbar
 function myFunction() {

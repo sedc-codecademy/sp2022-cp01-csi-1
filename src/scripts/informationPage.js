@@ -8,3 +8,8 @@ $(document).ready(function(){
   
 
 });
+let btnToTop = document.getElementById("back-to-the-top-btn");
+
+btnToTop.addEventListener("click", function(){
+ document.body.scrollIntoView();
+});
