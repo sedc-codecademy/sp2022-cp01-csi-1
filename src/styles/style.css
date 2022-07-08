@@ -19,12 +19,12 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #bbbaba;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(6, 6, 32);
+  background: rgb(11, 11, 49);
 }
 
 /* Handle on hover */
@@ -503,6 +503,7 @@ body {
   margin: 0 auto;
   overflow-y: auto;
   height: 450px;
+  padding: 12px;
 }
 
 #heading {
@@ -540,18 +541,21 @@ body {
 #growingTable,
 #fallingTable,
 #resultTable {
-  color: #FFF
+  color: #FFF;
+}
+
+.stats-coin-tables {
+  border: 1px solid rgba(224, 224, 224, 0.2);
+  border-radius: 5px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #search {
   width: 100%;
-  border-style: groove;
-  color: #FFF;
+  border-style: none;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.5);
 
 }
-
-
-
 /*#endregion*/
 
 /*#region Home page css*/
