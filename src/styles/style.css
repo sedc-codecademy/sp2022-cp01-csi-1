@@ -440,7 +440,35 @@ body{
     color: #fff;
     position: relative;
 }
-
+.facts-image{
+  height: 10%;
+  width: 10% ;
+}
+#bitcoin-pizza-fact{
+  border-radius: 30px;
+  background-color: rgba(15, 15, 216, 0.215);
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+}
+#etherium-facts{
+  border-radius: 30px;
+  background-color: rgba(15, 15, 216, 0.215);
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+}
+#crypto-mining-acts{
+  border-radius: 30px;
+  background-color: rgba(15, 15, 216, 0.215);
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+}
+.btn-for-information{
+  border-radius: 20px;
+  background-color: rgba(15, 15, 216, 0.215);
+}
 .content-homePage h1{
     font-size: 88px;
     margin-bottom: 12px;
