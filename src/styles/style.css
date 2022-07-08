@@ -3,12 +3,12 @@
 }
 
 body {
-  background-image: url("https://holacrypto.com/wp-content/uploads/2020/01/altnews-twitter-back.jpg");
+  /* background-image: url("https://holacrypto.com/wp-content/uploads/2020/01/altnews-twitter-back.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  background-color: #11101D;
+  /* background-color: #11101D; */
 }
 
 /* width */
@@ -329,7 +329,6 @@ body {
 }
 /* #endregion*/
 
-
 /* #region Simulator */
 @media (max-width: 720px) {
   .sections {
@@ -402,14 +401,16 @@ body {
 #buy-popup-btn {
   width: 100%;
   height: 50px;
-  border-radius: 0 !important;
 }
 
 .simulator-btns {
   border: none !important;
-  border-radius: 0 !important;
   color: black;
   background-color: white;
+}
+
+.statistics-container {
+  height: 100%;
 }
 
 /* #endregion */
