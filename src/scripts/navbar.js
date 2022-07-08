@@ -14,6 +14,7 @@ let welcomeElement = document.getElementById("welcome");
 let nameElement = document.getElementById("nameOfUser");
 let logOutBtn = document.getElementById('log_out');
 logOutBtn.style.visibility = 'hidden';
+$('#main-simulator-element').hide();
 
 
 //localStorage Data needed for creating profile

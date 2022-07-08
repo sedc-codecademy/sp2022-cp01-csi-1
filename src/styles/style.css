@@ -616,12 +616,14 @@ body{
 
 }
 .information-text h1{
+  
     margin-top: 40px;
     color:orange
+    
 }
-.information-text::-webkit-scrollbar{
+/* .information-text::-webkit-scrollbar{
     display: none;
-}
+} */
 h3{
     color: orange;
     text-align: center;
