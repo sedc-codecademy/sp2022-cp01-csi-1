@@ -20,7 +20,6 @@ $.ajax({
         dataType:'text',
         success:function(data){
             data = JSON.parse(data);
-            console.log(data);
             let cards = $("#cards")
             
             let card = "";
@@ -40,7 +39,6 @@ $.ajax({
              
         },
         error:function(data){
-            console.log(data);
             $('#output').append("<br>"+data.statusText);
         }  
     })

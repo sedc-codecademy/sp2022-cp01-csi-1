@@ -1,6 +1,5 @@
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
-
 let logInBtn = document.querySelector(".bx-user-circle");
 let homeBtn =  document.querySelector(" bx-home-circle");
 let statisticBtn = document.querySelector("bx-line-chart");
@@ -31,7 +30,6 @@ closeBtn.addEventListener("click", ()=>{
   menuBtnChange();//calling the function
   
 });
-
 
 logInBtn.addEventListener("click",()=>{
   sidebar.classList.toggle("open");
