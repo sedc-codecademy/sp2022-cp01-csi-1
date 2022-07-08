@@ -47,6 +47,7 @@ if(name != null && name != ''){
   nameElement.innerHTML = name;
   logOutBtn.style.visibility = 'visible';
   $('#main-login-element').hide();
+  $('#main-simulator-element').show();
 }
 
 
@@ -65,7 +66,7 @@ logOutBtn.addEventListener('click', function(){
   localStorage.removeItem("coinsDb");
   logOutBtn.style.visibility = 'hidden';
   $('#main-login-element').show();
-
+  $('#main-simulator-element').hide();
 })
 
 
