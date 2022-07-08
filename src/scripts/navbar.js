@@ -1,6 +1,5 @@
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
-
 let logInBtn = document.querySelector(".bx-user-circle");
 let homeBtn =  document.querySelector(" bx-home-circle");
 let statisticBtn = document.querySelector("bx-line-chart");
@@ -14,6 +13,7 @@ let welcomeElement = document.getElementById("welcome");
 let nameElement = document.getElementById("nameOfUser");
 let logOutBtn = document.getElementById('log_out');
 logOutBtn.style.visibility = 'hidden';
+$('#main-simulator-element').hide();
 
 
 //localStorage Data needed for creating profile
@@ -31,7 +31,6 @@ closeBtn.addEventListener("click", ()=>{
   
 });
 
-
 logInBtn.addEventListener("click",()=>{
   sidebar.classList.toggle("open");
   menuBtnChange();
@@ -47,6 +46,7 @@ if(name != null && name != ''){
   nameElement.innerHTML = name;
   logOutBtn.style.visibility = 'visible';
   $('#main-login-element').hide();
+  $('#main-simulator-element').show();
 }
 
 
@@ -64,8 +64,10 @@ logOutBtn.addEventListener('click', function(){
   // localStorage.setItem('cryptoWalletsOfMultipleUsers"',JSON.stringify(cryptoWalletValueUsers));
   localStorage.removeItem("coinsDb");
   logOutBtn.style.visibility = 'hidden';
+  $('#home-page').show();
+  $('#simulator-page').hide();
   $('#main-login-element').show();
-
+  $('#main-simulator-element').hide();
 })
 
 
