@@ -3,7 +3,7 @@
 } */
 body{
   /* background-image: url("https://holacrypto.com/wp-content/uploads/2020/01/altnews-twitter-back.jpg"); */
-  background-image: url("/bg2.jpg");
+  background-image: url("../assets/bg2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
