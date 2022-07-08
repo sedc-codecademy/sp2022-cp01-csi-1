@@ -609,7 +609,6 @@ body{
   opacity: 1;
 }
 .information-layout{
-   
     display: inline-block;
     position: relative;
     padding: 0;
@@ -619,26 +618,19 @@ body{
     left: 0%;
 
     background-position: center;
-    overflow: hidden;
     margin-top: 0px;
-    scrollbar-width: none; 
-    overflow-y: scroll;
-
 }
 .information-layout img{
   border-radius: 20px;
 }
 
 .information-text{
-    width: 50%;
+    width: 70%;
     height: 100vh;
-    left: 25%;
+    left: 17%;
     position: absolute;
-    margin: 10px;
-    
+    margin: 10px; 
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    /* scrollbar-width: none; for Firefox */
-    /* overflow-y: scroll; */
     bottom: 3%;
     top: 0.5%;
 
