@@ -424,6 +424,15 @@ body{
   height: 30px;
   margin-left: 1100px;
 }
+#growingTable,#fallingTable,#resultTable{
+  color:#FFF
+}
+#search{
+  width: 100%;
+  border-style:groove;
+  color: #FFF;
+  
+}
 
 
 
