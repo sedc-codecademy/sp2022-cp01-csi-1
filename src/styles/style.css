@@ -619,7 +619,6 @@ body{
     left: 0%;
 
     background-position: center;
-    overflow: hidden;
     margin-top: 0px;
     
 
@@ -629,15 +628,12 @@ body{
 }
 
 .information-text{
-    width: 50%;
+    width: 70%;
     height: 100vh;
-    left: 25%;
+    left: 17%;
     position: absolute;
     margin: 10px;
     
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
-    overflow-y: scroll;
     bottom: 3%;
     top: 0.5%;
 
