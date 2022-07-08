@@ -66,6 +66,8 @@ logOutBtn.addEventListener('click', function(){
   // localStorage.setItem('cryptoWalletsOfMultipleUsers"',JSON.stringify(cryptoWalletValueUsers));
   localStorage.removeItem("coinsDb");
   logOutBtn.style.visibility = 'hidden';
+  $('#home-page').show();
+  $('#simulator-page').hide();
   $('#main-login-element').show();
   $('#main-simulator-element').hide();
 })
